@@ -24,7 +24,7 @@ One more thing, to properly use the METEOR score to evaluate the model's perform
 
 These paraphrase files are available to be download from [here](https://github.com/cmu-mtlab/meteor/tree/master/data).
 
-## Run
+## Run the Code
 
 ### Train
 
@@ -45,4 +45,13 @@ To test a trained model on a test dataset, you can run `test_multimodal.py` and 
 ```
 
 
+## Cite
+```tex
+@article{zhou2018visual,
+  title={A visual attention grounding neural model for multimodal machine translation},
+  author={Zhou, Mingyang and Cheng, Runxiang and Lee, Yong Jae and Yu, Zhou},
+  journal={arXiv preprint arXiv:1808.08266},
+  year={2018}
+}
+```
 
