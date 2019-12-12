@@ -45,7 +45,8 @@ To test a trained model on a test dataset, you can run `test_multimodal.py` and 
 ```
 
 
-## Cite
+## Citation
+
 ```tex
 @article{zhou2018visual,
   title={A visual attention grounding neural model for multimodal machine translation},
