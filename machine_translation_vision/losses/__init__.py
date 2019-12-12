@@ -1,0 +1,2 @@
+from .PairwiseRankingLoss import PairwiseRankingLoss
+from .ImageRetrievalRankingLoss import ImageRetrievalRankingLoss
