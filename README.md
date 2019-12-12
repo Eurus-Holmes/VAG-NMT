@@ -45,6 +45,29 @@ To test a trained model on a test dataset, you can run `test_multimodal.py` and 
 ```
 
 
+### Results
+
+```bash
+nohup python nmt_multimodal_beam_DE.py --data_path ./path/to/data --trained_model_path ./path/to/save/model --sr en --tg de &
+```
+
+Output: [nohup.out](https://github.com/Eurus-Holmes/VAG-NMT/blob/master/nohup.out)
+
+```
+Evalute the Test Result
+Image Retrieval Accuracy with best_BLEU model is:
+r1: 59.9, r5: 87.2, r10: 93.1
+Test BLEU score from the best BLEU model: 0.3156321668098113
+Test METEOR score from the best BLEU model: 0.5215313737631495
+
+
+Image Retrieval Accuracy with best_loss model is:
+r1: 49.7, r5: 80.0, r10: 88.9
+Test BLEU score from the best LOSS model: 0.3125071718114073
+Test METEOR score from the best LOSS model: 0.5200889548226774
+```
+
+
 ## Citation
 
 ```tex
