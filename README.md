@@ -1,18 +1,18 @@
 # VAG-NMT
 
-> [Reproduce] Code for the paper "[A Visual Attention Grounding Neural Model for Multimodal Machine Translation](https://arxiv.org/abs/1808.08266)".
+![Python 3.6](https://img.shields.io/badge/python-3.6-green.svg)  
+
+> Pytorch implementation for the paper "[A Visual Attention Grounding Neural Model for Multimodal Machine Translation](https://arxiv.org/abs/1808.08266)".
 
 
 
 
-## 2. Prerequisite
-The code is successfully tested on Ubuntu 16.04 with NVIDIA GPUs and the following things are expected as prerequisite:
-1. Python 3.6
-2. [CUDA 8.0](https://developer.nvidia.com/cuda-80-ga2-download-archive)
-3. CUDNN 7.1.4
-4. [Conda](https://conda.io/miniconda.html)
+## Prerequisite
 
-While we havn't tested this code with other OS system, we expect it can be runned on any Linux Based OS with a minor adjustment. 
+
+```bash
+pip install -r requirements.txt
+```
 
 One more thing, to properly use the METEOR score to evaluate the model's performance, you will need to download a set of METEOR paraphrase files and store it under the repository of machine_translation_vision/meteor/data. These paraphrase files are available to be download from [here](https://github.com/cmu-mtlab/meteor/tree/master/data).
 ## 3. How to run the code?
