@@ -1,6 +1,7 @@
 # VAG-NMT
 
-> This code repository contains the implementation of our research project: _[A Visual Attention Grounding Neural Model for Multimodal Machine Translation](https://arxiv.org/abs/1808.08266).
+> [Reproduce] Code for the paper "[A Visual Attention Grounding Neural Model for Multimodal Machine Translation](https://arxiv.org/abs/1808.08266)".
+
 
 
 
