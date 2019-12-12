@@ -26,6 +26,8 @@ These paraphrase files are available to be download from [here](https://github.c
 
 ## Run
 
+### Train
+
 To train a VAG-NMT, you will need to run the file "nmt_multimodal_beam_DE.py" or "nmt_multimodal_beam_FR.py", depending on the languages you plan to work with. If you want to build a English to German translation model, then you can run:
 
 ```bash
@@ -34,6 +36,13 @@ To train a VAG-NMT, you will need to run the file "nmt_multimodal_beam_DE.py" or
 
 You need to define at least four things in order to run this code: the directory for the dataset, the directory to save the trained model, the source language, and the target language. The languages that our model can work with include: English=> "en", German->"de" and French->“fr”.
 
+### Test
+
 To test a trained model on a test dataset, you can run `test_multimodal.py` and `test_monomodal.py` respectively to evaluate the trained multimodal NMT and trained text-only NMT. You need to modify the parameters in the block of "User Defined Area" according to your own situation. The way to define each parameter is the same as that defined in the training process.
+
+```bash
+  python test_multimodal.py
+```
+
 
 
