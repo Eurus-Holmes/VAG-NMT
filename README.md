@@ -1,11 +1,8 @@
-# A-Visual-Attention-Grounding-Neural-Model
-## 1. Overview
-This code repository contains the implementation of our research project: _[A Visual Attention Grounding Neural Model for Multimodal Machine Translation](https://arxiv.org/abs/1808.08266)._
+# VAG-NMT
 
-We introduce a novel multimodal machine translation model that utilizes parallel visual and texture information. Our model jointly optimizes learning of a shared visual-language embedding and translating languages. It does this with the aid of a visual attention grounding mechanism which links the visual semantics in the image with the corresponding textual se-
-mantics.
+> This code repository contains the implementation of our research project: _[A Visual Attention Grounding Neural Model for Multimodal Machine Translation](https://arxiv.org/abs/1808.08266).
 
-![An Overview of the Visual Attention NMT](https://github.com/zmykevin/A-Visual-Attention-Grounding-Neural-Model/blob/master/AGV-NMT.jpg)
+
 
 ## 2. Prerequisite
 The code is successfully tested on Ubuntu 16.04 with NVIDIA GPUs and the following things are expected as prerequisite:
