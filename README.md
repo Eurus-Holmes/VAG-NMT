@@ -2,7 +2,9 @@
 
 ![Python 3.6](https://img.shields.io/badge/python-3.6-green.svg)  
 
-> Pytorch implementation for the paper "[A Visual Attention Grounding Neural Model for Multimodal Machine Translation](https://arxiv.org/abs/1808.08266)".
+> Pytorch implementation for the paper "[A Visual Attention Grounding Neural Model for Multimodal Machine Translation](https://arxiv.org/abs/1808.08266)". 
+
+> Original author's implementation is [here](https://github.com/zmykevin/A-Visual-Attention-Grounding-Neural-Model).
 
 
 ## Datasets
