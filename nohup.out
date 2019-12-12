@@ -1,0 +1,1150 @@
+/usr/local/lib/python3.6/site-packages/torch/nn/functional.py:52: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/usr/local/lib/python3.6/site-packages/torch/nn/functional.py:995: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+/dfsdata2/chenfy7_data/A-Visual-Attention-Grounding-Neural-Model-master/machine_translation_vision/models/NMT_AttentionImagine_Seq2Seq_Beam_V11.py:272: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  decoder_input = Variable(cur_tokens,volatile=True)
+Whether GPU is available: True
+The size of Training Source and Training Target is: 29000,29000
+The size of Validation Source and Validation Target is: 1014,1014
+The size of Test Source and Test Target is: 1000,1000
+The size of Training Data after filtering: 29000
+The size of Val Data after filtering: 1014
+The size of Test Data after filtering: 1000
+The vocabulary size for soruce language: 8506
+The vocabulary size for target language: 9390
+Training Image Feature Size is: (29000, 2048)
+Validation Image Feature Size is: (1014, 2048)
+Testing Image Feature Size is: (1000, 2048)
+Configurations:
+
+
+######## Network Structure #########
+embedding_size: 256
+hidden_size: 512
+shared_embedding_size: 512
+n_layers: 1
+tied_emb: True
+
+
+####### Dropout #######
+dropout_im_emb: 0.2
+dropout_txt_emb: 0.4
+dropout_rnn_enc: 0.0
+dropout_rnn_dec: 0.0
+dropout_emb: 0.3
+dropout_ctx: 0.5
+dropout_out: 0.5
+
+
+####### Training Setting #######
+batch_size: 32
+eval_batch_size: 16
+learning_rate: 0.0004
+weight_decay: 1e-05
+loss_w: 0.99
+beam_size: 12
+n_epochs: 100
+print_every: 100
+eval_every: 1000
+save_every: 10000
+vse_separate: False
+teacher_force_ratio: 0.8
+clip: 1.0
+input_size: 8507
+output_size: 9391
+vse_margin: 0.1
+vse_loss_type: pairwise
+init_split: 0.5
+
+
+Begin Training
+0m 8s (- 126m 32s) (100 0%) train_loss: 7.3683, train_mt_loss: 6.5106, train_vse_loss: 92.2782
+0m 15s (- 119m 14s) (200 0%) train_loss: 5.6015, train_mt_loss: 5.3567, train_vse_loss: 29.8309
+0m 23s (- 116m 10s) (300 0%) train_loss: 5.2054, train_mt_loss: 5.0608, train_vse_loss: 19.5152
+0m 31s (- 117m 22s) (400 0%) train_loss: 5.0078, train_mt_loss: 4.8880, train_vse_loss: 16.8695
+0m 39s (- 117m 17s) (500 0%) train_loss: 4.6270, train_mt_loss: 4.5317, train_vse_loss: 14.0610
+0m 46s (- 116m 20s) (600 0%) train_loss: 4.5201, train_mt_loss: 4.4416, train_vse_loss: 12.2934
+0m 53s (- 113m 55s) (700 0%) train_loss: 4.3009, train_mt_loss: 4.2362, train_vse_loss: 10.7016
+1m 0s (- 112m 24s) (800 0%) train_loss: 4.3769, train_mt_loss: 4.3216, train_vse_loss: 9.8566
+1m 6s (- 111m 17s) (900 0%) train_loss: 4.1689, train_mt_loss: 4.1189, train_vse_loss: 9.1187
+1m 13s (- 110m 3s) (1000 1%) train_loss: 4.0620, train_mt_loss: 4.0369, train_vse_loss: 6.5468
+dev_loss: 4.081080257892609, dev_mt_loss: 4.094879974211965, dev_vse_loss: 2.7149064045931612, dev_bleu: 0.17516955651364166, dev_meteor: 0.3537631875192256
+Image Retrieval Accuracy is:
+r1: 21.696252465483234, r5: 56.90335305719921, r10: 72.18934911242603
+An example demo:
+src: a man and woman walk across an empty street .
+ref: ein mann und eine frau überqueren eine leere straße .
+pred: ein mann und eine frau gehen über eine straße entlang .
+Current Early_Stop Counting: 10
+Best Loss so far is: 4.094879974211965
+Best BLEU so far is: 0.17516955651364166
+Best METEOR so far is: 0.3537631875192256
+1m 49s (- 149m 8s) (1100 1%) train_loss: 3.9649, train_mt_loss: 3.9341, train_vse_loss: 7.0118
+1m 56s (- 144m 47s) (1200 1%) train_loss: 3.7542, train_mt_loss: 3.7227, train_vse_loss: 6.8782
+2m 3s (- 141m 16s) (1300 1%) train_loss: 3.7130, train_mt_loss: 3.6866, train_vse_loss: 6.3258
+2m 10s (- 138m 43s) (1400 1%) train_loss: 3.8665, train_mt_loss: 3.8419, train_vse_loss: 6.2995
+2m 17s (- 135m 59s) (1500 1%) train_loss: 3.6287, train_mt_loss: 3.6011, train_vse_loss: 6.3562
+2m 24s (- 133m 53s) (1600 1%) train_loss: 3.6060, train_mt_loss: 3.5839, train_vse_loss: 5.7917
+2m 31s (- 131m 49s) (1700 1%) train_loss: 3.5627, train_mt_loss: 3.5426, train_vse_loss: 5.5504
+2m 38s (- 129m 57s) (1800 1%) train_loss: 3.3692, train_mt_loss: 3.3478, train_vse_loss: 5.4879
+2m 44s (- 128m 17s) (1900 2%) train_loss: 3.3611, train_mt_loss: 3.3498, train_vse_loss: 4.4736
+2m 51s (- 126m 44s) (2000 2%) train_loss: 3.1967, train_mt_loss: 3.1827, train_vse_loss: 4.5899
+dev_loss: 3.487482395555292, dev_mt_loss: 3.5053380876779556, dev_vse_loss: 1.7197639351444585, dev_bleu: 0.25451184305372276, dev_meteor: 0.43839109759992095
+Image Retrieval Accuracy is:
+r1: 32.05128205128205, r5: 67.65285996055226, r10: 81.06508875739645
+An example demo:
+src: a group of musicians playing music in the street .
+ref: eine gruppe von musikern spielt musik auf der straße .
+pred: eine gruppe von männern spielt in der straße .
+Current Early_Stop Counting: 10
+Best Loss so far is: 3.5053380876779556
+Best BLEU so far is: 0.25451184305372276
+Best METEOR so far is: 0.43839109759992095
+3m 19s (- 140m 14s) (2100 2%) train_loss: 3.1643, train_mt_loss: 3.1517, train_vse_loss: 4.4154
+3m 26s (- 138m 34s) (2200 2%) train_loss: 3.3268, train_mt_loss: 3.3169, train_vse_loss: 4.3128
+3m 33s (- 136m 55s) (2300 2%) train_loss: 3.1886, train_mt_loss: 3.1742, train_vse_loss: 4.6142
+3m 40s (- 135m 17s) (2400 2%) train_loss: 3.2048, train_mt_loss: 3.1947, train_vse_loss: 4.2010
+3m 47s (- 133m 46s) (2500 2%) train_loss: 2.9985, train_mt_loss: 2.9836, train_vse_loss: 4.4781
+3m 54s (- 132m 26s) (2600 2%) train_loss: 3.0170, train_mt_loss: 3.0058, train_vse_loss: 4.1290
+4m 1s (- 131m 2s) (2700 2%) train_loss: 3.0021, train_mt_loss: 2.9923, train_vse_loss: 3.9754
+4m 8s (- 129m 48s) (2800 3%) train_loss: 3.2564, train_mt_loss: 3.2537, train_vse_loss: 3.5267
+4m 15s (- 128m 45s) (2900 3%) train_loss: 2.8804, train_mt_loss: 2.8742, train_vse_loss: 3.5000
+4m 22s (- 127m 44s) (3000 3%) train_loss: 2.9764, train_mt_loss: 2.9718, train_vse_loss: 3.4315
+dev_loss: 3.2533606312104633, dev_mt_loss: 3.2727412964616502, dev_vse_loss: 1.3346702121198177, dev_bleu: 0.30038833070185605, dev_meteor: 0.4813316190184546
+Image Retrieval Accuracy is:
+r1: 41.222879684418146, r5: 77.90927021696253, r10: 88.3629191321499
+An example demo:
+src: three dogs are playing in the water .
+ref: drei hunde spielen im wasser .
+pred: drei hunde spielen im wasser .
+Current Early_Stop Counting: 10
+Best Loss so far is: 3.2727412964616502
+Best BLEU so far is: 0.30038833070185605
+Best METEOR so far is: 0.4813316190184546
+4m 44s (- 133m 47s) (3100 3%) train_loss: 2.8382, train_mt_loss: 2.8329, train_vse_loss: 3.3578
+4m 50s (- 132m 24s) (3200 3%) train_loss: 2.7932, train_mt_loss: 2.7849, train_vse_loss: 3.6119
+4m 57s (- 131m 13s) (3300 3%) train_loss: 2.9211, train_mt_loss: 2.9188, train_vse_loss: 3.1515
+5m 4s (- 130m 15s) (3400 3%) train_loss: 2.9521, train_mt_loss: 2.9468, train_vse_loss: 3.4707
+5m 11s (- 129m 17s) (3500 3%) train_loss: 3.0147, train_mt_loss: 3.0103, train_vse_loss: 3.4477
+5m 18s (- 128m 22s) (3600 3%) train_loss: 2.9059, train_mt_loss: 2.9009, train_vse_loss: 3.4037
+5m 25s (- 127m 26s) (3700 4%) train_loss: 2.8875, train_mt_loss: 2.8824, train_vse_loss: 3.3958
+5m 32s (- 126m 38s) (3800 4%) train_loss: 2.9082, train_mt_loss: 2.9093, train_vse_loss: 2.8000
+5m 39s (- 125m 46s) (3900 4%) train_loss: 2.6516, train_mt_loss: 2.6518, train_vse_loss: 2.6336
+5m 46s (- 125m 5s) (4000 4%) train_loss: 2.5926, train_mt_loss: 2.5872, train_vse_loss: 3.1310
+dev_loss: 3.1319082507065366, dev_mt_loss: 3.152230428797858, dev_vse_loss: 1.1200087980500288, dev_bleu: 0.3246347521794461, dev_meteor: 0.5155011643618189
+Image Retrieval Accuracy is:
+r1: 46.05522682445759, r5: 79.28994082840237, r10: 91.3214990138067
+An example demo:
+src: two people playing a game facing each other .
+ref: zwei einander zugewandte menschen spielen ein spiel .
+pred: zwei personen spielen ein spiel miteinander .
+Current Early_Stop Counting: 10
+Best Loss so far is: 3.152230428797858
+Best BLEU so far is: 0.3246347521794461
+Best METEOR so far is: 0.5155011643618189
+6m 5s (- 128m 35s) (4100 4%) train_loss: 2.7070, train_mt_loss: 2.7058, train_vse_loss: 2.8273
+6m 13s (- 128m 6s) (4200 4%) train_loss: 2.6234, train_mt_loss: 2.6199, train_vse_loss: 2.9657
+6m 21s (- 127m 32s) (4300 4%) train_loss: 2.6281, train_mt_loss: 2.6243, train_vse_loss: 3.0043
+6m 29s (- 127m 2s) (4400 4%) train_loss: 2.6126, train_mt_loss: 2.6096, train_vse_loss: 2.9153
+6m 36s (- 126m 31s) (4500 4%) train_loss: 2.6356, train_mt_loss: 2.6321, train_vse_loss: 2.9819
+6m 44s (- 126m 1s) (4600 5%) train_loss: 2.5132, train_mt_loss: 2.5113, train_vse_loss: 2.7094
+6m 51s (- 125m 21s) (4700 5%) train_loss: 2.6171, train_mt_loss: 2.6195, train_vse_loss: 2.3832
+6m 58s (- 124m 37s) (4800 5%) train_loss: 2.6470, train_mt_loss: 2.6474, train_vse_loss: 2.6155
+7m 5s (- 123m 53s) (4900 5%) train_loss: 2.5474, train_mt_loss: 2.5440, train_vse_loss: 2.8794
+7m 11s (- 123m 10s) (5000 5%) train_loss: 2.5007, train_mt_loss: 2.4991, train_vse_loss: 2.6578
+dev_loss: 3.1033467863287245, dev_mt_loss: 3.1226871705480983, dev_vse_loss: 1.1886456944048405, dev_bleu: 0.33573818792476884, dev_meteor: 0.5126330286601951
+Image Retrieval Accuracy is:
+r1: 42.70216962524655, r5: 78.69822485207101, r10: 89.8422090729783
+An example demo:
+src: four men standing near a yellow car .
+ref: vier männer stehen bei einem gelben auto .
+pred: vier männer stehen in der nähe eines gelben autos .
+Current Early_Stop Counting: 10
+Best Loss so far is: 3.1226871705480983
+Best BLEU so far is: 0.33573818792476884
+Best METEOR so far is: 0.5155011643618189
+7m 28s (- 125m 21s) (5100 5%) train_loss: 2.7605, train_mt_loss: 2.7654, train_vse_loss: 2.2765
+7m 35s (- 124m 41s) (5200 5%) train_loss: 2.5534, train_mt_loss: 2.5525, train_vse_loss: 2.6331
+7m 42s (- 124m 3s) (5300 5%) train_loss: 2.6535, train_mt_loss: 2.6557, train_vse_loss: 2.4354
+7m 49s (- 123m 24s) (5400 5%) train_loss: 2.5459, train_mt_loss: 2.5467, train_vse_loss: 2.4699
+7m 56s (- 122m 46s) (5500 6%) train_loss: 2.4914, train_mt_loss: 2.4897, train_vse_loss: 2.6543
+8m 2s (- 122m 8s) (5600 6%) train_loss: 2.4299, train_mt_loss: 2.4318, train_vse_loss: 2.2435
+8m 9s (- 121m 31s) (5700 6%) train_loss: 2.3927, train_mt_loss: 2.3938, train_vse_loss: 2.2751
+8m 16s (- 120m 57s) (5800 6%) train_loss: 2.3872, train_mt_loss: 2.3872, train_vse_loss: 2.3912
+8m 23s (- 120m 27s) (5900 6%) train_loss: 2.5292, train_mt_loss: 2.5313, train_vse_loss: 2.3157
+8m 30s (- 119m 56s) (6000 6%) train_loss: 2.2985, train_mt_loss: 2.2958, train_vse_loss: 2.5631
+dev_loss: 3.0471311967287744, dev_mt_loss: 3.0662389961736545, dev_vse_loss: 1.155455349811486, dev_bleu: 0.35607758518459454, dev_meteor: 0.5396101387491326
+Image Retrieval Accuracy is:
+r1: 43.78698224852071, r5: 81.36094674556213, r10: 90.82840236686391
+An example demo:
+src: people are being photographed while mountain climbing or hiking .
+ref: menschen werden beim klettern oder wandern fotografiert .
+pred: leute werden von einem bergberg hinauf .
+Current Early_Stop Counting: 10
+Best Loss so far is: 3.0662389961736545
+Best BLEU so far is: 0.35607758518459454
+Best METEOR so far is: 0.5396101387491326
+8m 53s (- 123m 4s) (6100 6%) train_loss: 2.3962, train_mt_loss: 2.3948, train_vse_loss: 2.5377
+8m 59s (- 122m 28s) (6200 6%) train_loss: 2.4586, train_mt_loss: 2.4579, train_vse_loss: 2.5261
+9m 6s (- 121m 55s) (6300 6%) train_loss: 2.3366, train_mt_loss: 2.3369, train_vse_loss: 2.3121
+9m 13s (- 121m 22s) (6400 7%) train_loss: 2.3667, train_mt_loss: 2.3655, train_vse_loss: 2.4806
+9m 20s (- 120m 51s) (6500 7%) train_loss: 2.4570, train_mt_loss: 2.4605, train_vse_loss: 2.1113
+9m 27s (- 120m 21s) (6600 7%) train_loss: 2.4954, train_mt_loss: 2.5000, train_vse_loss: 2.0352
+9m 33s (- 119m 47s) (6700 7%) train_loss: 2.2546, train_mt_loss: 2.2554, train_vse_loss: 2.1706
+9m 41s (- 119m 21s) (6800 7%) train_loss: 2.3133, train_mt_loss: 2.3156, train_vse_loss: 2.0835
+9m 47s (- 118m 51s) (6900 7%) train_loss: 2.2320, train_mt_loss: 2.2338, train_vse_loss: 2.0511
+9m 54s (- 118m 22s) (7000 7%) train_loss: 2.3438, train_mt_loss: 2.3426, train_vse_loss: 2.4541
+dev_loss: 2.8034249576074735, dev_mt_loss: 2.821433799607413, dev_vse_loss: 1.0205484772367137, dev_bleu: 0.3640568846355486, dev_meteor: 0.5445947685281697
+Image Retrieval Accuracy is:
+r1: 48.717948717948715, r5: 83.82642998027613, r10: 91.91321499013807
+An example demo:
+src: a young white male is sweeping a porch with a large broom .
+ref: ein weißer junge fegt eine veranda mit einem großen besen .
+pred: ein junger weißer mann kehrt eine veranda mit einem großen besen .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.821433799607413
+Best BLEU so far is: 0.3640568846355486
+Best METEOR so far is: 0.5445947685281697
+10m 17s (- 120m 56s) (7100 7%) train_loss: 2.3847, train_mt_loss: 2.3878, train_vse_loss: 2.0775
+10m 23s (- 120m 26s) (7200 7%) train_loss: 2.2969, train_mt_loss: 2.2993, train_vse_loss: 2.0616
+10m 31s (- 120m 1s) (7300 8%) train_loss: 2.3053, train_mt_loss: 2.3081, train_vse_loss: 2.0264
+10m 38s (- 119m 33s) (7400 8%) train_loss: 2.4643, train_mt_loss: 2.4678, train_vse_loss: 2.1195
+10m 44s (- 119m 6s) (7500 8%) train_loss: 2.3453, train_mt_loss: 2.3500, train_vse_loss: 1.8894
+10m 51s (- 118m 38s) (7600 8%) train_loss: 2.1918, train_mt_loss: 2.1950, train_vse_loss: 1.8780
+10m 58s (- 118m 12s) (7700 8%) train_loss: 2.3902, train_mt_loss: 2.3958, train_vse_loss: 1.8304
+11m 5s (- 117m 46s) (7800 8%) train_loss: 2.1139, train_mt_loss: 2.1172, train_vse_loss: 1.7941
+11m 12s (- 117m 21s) (7900 8%) train_loss: 2.3729, train_mt_loss: 2.3772, train_vse_loss: 1.9436
+11m 19s (- 116m 57s) (8000 8%) train_loss: 2.1196, train_mt_loss: 2.1209, train_vse_loss: 1.9915
+dev_loss: 2.643206822020667, dev_mt_loss: 2.6609015028391565, dev_vse_loss: 0.8914308776812894, dev_bleu: 0.36366375267596657, dev_meteor: 0.5473904776845538
+Image Retrieval Accuracy is:
+r1: 49.21104536489152, r5: 83.82642998027613, r10: 92.01183431952663
+An example demo:
+src: the image shows the reflection of a man and woman located at a terminal of some sort .
+ref: das bild zeigt das spiegelbild eines mannes und einer frau an irgendeiner art von terminal .
+pred: das bild zeigt das bild eines mannes und eine frau in einer art einer art .
+Current Early_Stop Counting: 9
+Best Loss so far is: 2.6609015028391565
+Best BLEU so far is: 0.3640568846355486
+Best METEOR so far is: 0.5473904776845538
+11m 46s (- 119m 50s) (8100 8%) train_loss: 2.0254, train_mt_loss: 2.0264, train_vse_loss: 1.9224
+11m 52s (- 119m 24s) (8200 9%) train_loss: 2.2348, train_mt_loss: 2.2359, train_vse_loss: 2.1326
+12m 0s (- 119m 0s) (8300 9%) train_loss: 2.3733, train_mt_loss: 2.3792, train_vse_loss: 1.7849
+12m 6s (- 118m 32s) (8400 9%) train_loss: 2.2018, train_mt_loss: 2.2079, train_vse_loss: 1.6036
+12m 13s (- 118m 5s) (8500 9%) train_loss: 1.9554, train_mt_loss: 1.9552, train_vse_loss: 1.9831
+12m 20s (- 117m 40s) (8600 9%) train_loss: 2.1191, train_mt_loss: 2.1206, train_vse_loss: 1.9666
+12m 27s (- 117m 14s) (8700 9%) train_loss: 2.0785, train_mt_loss: 2.0798, train_vse_loss: 1.9482
+12m 34s (- 116m 49s) (8800 9%) train_loss: 2.2625, train_mt_loss: 2.2661, train_vse_loss: 1.9063
+12m 41s (- 116m 26s) (8900 9%) train_loss: 2.0557, train_mt_loss: 2.0570, train_vse_loss: 1.9292
+12m 48s (- 116m 4s) (9000 9%) train_loss: 2.0580, train_mt_loss: 2.0589, train_vse_loss: 1.9781
+dev_loss: 2.578187988272735, dev_mt_loss: 2.596051093723093, dev_vse_loss: 0.8097374992711204, dev_bleu: 0.37612022867721934, dev_meteor: 0.5512538465757076
+Image Retrieval Accuracy is:
+r1: 52.16962524654832, r5: 85.70019723865877, r10: 93.39250493096647
+An example demo:
+src: three kids wearing brown shirts and jeans jumping outdoors with leaves on the ground .
+ref: drei kinder in braunen shirts und jeans hüpfen im freien mit blättern auf dem boden .
+pred: drei kinder in braunen hemden und jeans springen im freien mit blättern auf dem boden .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.596051093723093
+Best BLEU so far is: 0.37612022867721934
+Best METEOR so far is: 0.5512538465757076
+13m 10s (- 117m 57s) (9100 10%) train_loss: 2.1888, train_mt_loss: 2.1928, train_vse_loss: 1.7972
+13m 17s (- 117m 38s) (9200 10%) train_loss: 2.0407, train_mt_loss: 2.0450, train_vse_loss: 1.6110
+13m 24s (- 117m 16s) (9300 10%) train_loss: 2.2687, train_mt_loss: 2.2752, train_vse_loss: 1.6309
+13m 31s (- 116m 52s) (9400 10%) train_loss: 2.0732, train_mt_loss: 2.0792, train_vse_loss: 1.4849
+13m 38s (- 116m 29s) (9500 10%) train_loss: 2.2042, train_mt_loss: 2.2104, train_vse_loss: 1.5920
+13m 45s (- 116m 5s) (9600 10%) train_loss: 2.0464, train_mt_loss: 2.0507, train_vse_loss: 1.6251
+13m 52s (- 115m 41s) (9700 10%) train_loss: 1.9627, train_mt_loss: 1.9653, train_vse_loss: 1.7012
+13m 59s (- 115m 19s) (9800 10%) train_loss: 2.1388, train_mt_loss: 2.1427, train_vse_loss: 1.7516
+14m 6s (- 114m 57s) (9900 10%) train_loss: 1.9968, train_mt_loss: 1.9979, train_vse_loss: 1.8896
+14m 13s (- 114m 35s) (10000 11%) train_loss: 1.8836, train_mt_loss: 1.8834, train_vse_loss: 1.9072
+dev_loss: 2.5319087420191084, dev_mt_loss: 2.5484297509704317, dev_vse_loss: 0.8963269825492587, dev_bleu: 0.37851356348611065, dev_meteor: 0.563461438187687
+Image Retrieval Accuracy is:
+r1: 49.5069033530572, r5: 85.10848126232742, r10: 92.99802761341223
+An example demo:
+src: an elaborate costumed figure is in front of a brightly decorated structure .
+ref: eine aufwendig kostümierte figur vor einem prächtig geschmückten bauwerk .
+pred: eine amiliche figur befindet sich vor einer hell erleuchteten konstruktion .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.5484297509704317
+Best BLEU so far is: 0.37851356348611065
+Best METEOR so far is: 0.563461438187687
+14m 33s (- 116m 5s) (10100 11%) train_loss: 2.1049, train_mt_loss: 2.1061, train_vse_loss: 1.9897
+14m 40s (- 115m 41s) (10200 11%) train_loss: 2.0331, train_mt_loss: 2.0358, train_vse_loss: 1.7584
+14m 47s (- 115m 21s) (10300 11%) train_loss: 2.1251, train_mt_loss: 2.1308, train_vse_loss: 1.5540
+14m 54s (- 114m 59s) (10400 11%) train_loss: 1.9066, train_mt_loss: 1.9074, train_vse_loss: 1.8265
+15m 1s (- 114m 37s) (10500 11%) train_loss: 1.9326, train_mt_loss: 1.9366, train_vse_loss: 1.5356
+15m 8s (- 114m 17s) (10600 11%) train_loss: 1.9263, train_mt_loss: 1.9303, train_vse_loss: 1.5260
+15m 15s (- 113m 56s) (10700 11%) train_loss: 1.9734, train_mt_loss: 1.9763, train_vse_loss: 1.6834
+15m 22s (- 113m 38s) (10800 11%) train_loss: 2.1470, train_mt_loss: 2.1527, train_vse_loss: 1.5860
+15m 30s (- 113m 26s) (10900 12%) train_loss: 2.3033, train_mt_loss: 2.3110, train_vse_loss: 1.5460
+15m 38s (- 113m 9s) (11000 12%) train_loss: 1.8497, train_mt_loss: 1.8507, train_vse_loss: 1.7541
+dev_loss: 2.419352290885789, dev_mt_loss: 2.436460387493883, dev_vse_loss: 0.7256491365177291, dev_bleu: 0.3868870002673553, dev_meteor: 0.5641643492367137
+Image Retrieval Accuracy is:
+r1: 50.59171597633136, r5: 86.8836291913215, r10: 93.58974358974359
+An example demo:
+src: three kids wearing brown shirts and jeans jumping outdoors with leaves on the ground .
+ref: drei kinder in braunen shirts und jeans hüpfen im freien mit blättern auf dem boden .
+pred: drei kinder in braunen hemden und jeans springen im freien mit blätter auf dem boden .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.436460387493883
+Best BLEU so far is: 0.3868870002673553
+Best METEOR so far is: 0.5641643492367137
+16m 2s (- 114m 50s) (11100 12%) train_loss: 1.8225, train_mt_loss: 1.8217, train_vse_loss: 1.9021
+16m 9s (- 114m 30s) (11200 12%) train_loss: 1.9702, train_mt_loss: 1.9764, train_vse_loss: 1.3503
+16m 16s (- 114m 13s) (11300 12%) train_loss: 1.8844, train_mt_loss: 1.8890, train_vse_loss: 1.4357
+16m 23s (- 113m 51s) (11400 12%) train_loss: 1.8024, train_mt_loss: 1.8039, train_vse_loss: 1.6481
+16m 31s (- 113m 37s) (11500 12%) train_loss: 1.9366, train_mt_loss: 1.9390, train_vse_loss: 1.7005
+16m 38s (- 113m 18s) (11600 12%) train_loss: 1.8743, train_mt_loss: 1.8775, train_vse_loss: 1.5642
+16m 44s (- 112m 56s) (11700 12%) train_loss: 1.8411, train_mt_loss: 1.8439, train_vse_loss: 1.5637
+16m 52s (- 112m 40s) (11800 13%) train_loss: 2.0087, train_mt_loss: 2.0116, train_vse_loss: 1.7284
+17m 0s (- 112m 30s) (11900 13%) train_loss: 1.8360, train_mt_loss: 1.8386, train_vse_loss: 1.5796
+17m 7s (- 112m 12s) (12000 13%) train_loss: 2.0223, train_mt_loss: 2.0290, train_vse_loss: 1.3514
+dev_loss: 2.4285867480295047, dev_mt_loss: 2.445934117904731, dev_vse_loss: 0.7111949478941304, dev_bleu: 0.3857697059026154, dev_meteor: 0.5672690833494455
+Image Retrieval Accuracy is:
+r1: 55.917159763313606, r5: 87.17948717948718, r10: 94.37869822485207
+An example demo:
+src: a man in a red baseball cap is leaning against a light pole .
+ref: ein mann mit einer roten baseballkappe lehnt an einem laternenpfahl .
+pred: ein mann mit einer roten baseballmütze lehnt gegen eine lichtstange .
+Current Early_Stop Counting: 9
+Best Loss so far is: 2.436460387493883
+Best BLEU so far is: 0.3868870002673553
+Best METEOR so far is: 0.5672690833494455
+17m 24s (- 112m 57s) (12100 13%) train_loss: 1.8548, train_mt_loss: 1.8587, train_vse_loss: 1.4680
+17m 32s (- 112m 40s) (12200 13%) train_loss: 1.8776, train_mt_loss: 1.8832, train_vse_loss: 1.3257
+17m 39s (- 112m 22s) (12300 13%) train_loss: 1.6483, train_mt_loss: 1.6487, train_vse_loss: 1.6073
+17m 46s (- 112m 7s) (12400 13%) train_loss: 1.9830, train_mt_loss: 1.9893, train_vse_loss: 1.3579
+17m 53s (- 111m 46s) (12500 13%) train_loss: 1.7182, train_mt_loss: 1.7215, train_vse_loss: 1.3950
+18m 0s (- 111m 26s) (12600 13%) train_loss: 1.6120, train_mt_loss: 1.6109, train_vse_loss: 1.7202
+18m 7s (- 111m 8s) (12700 14%) train_loss: 1.7283, train_mt_loss: 1.7306, train_vse_loss: 1.4908
+18m 14s (- 110m 49s) (12800 14%) train_loss: 1.8661, train_mt_loss: 1.8696, train_vse_loss: 1.5135
+18m 20s (- 110m 31s) (12900 14%) train_loss: 1.8698, train_mt_loss: 1.8733, train_vse_loss: 1.5200
+18m 28s (- 110m 14s) (13000 14%) train_loss: 2.1284, train_mt_loss: 2.1358, train_vse_loss: 1.3958
+dev_loss: 2.802006355353764, dev_mt_loss: 2.822402915784291, dev_vse_loss: 0.7827446226562772, dev_bleu: 0.37991353084164803, dev_meteor: 0.5569493061028039
+Image Retrieval Accuracy is:
+r1: 56.41025641025641, r5: 89.3491124260355, r10: 94.18145956607495
+An example demo:
+src: a man with a large hat in the bushes .
+ref: ein mann mit einem großen hut im gebüsch .
+pred: ein mann mit einem großen hut im büschen .
+Current Early_Stop Counting: 8
+Best Loss so far is: 2.436460387493883
+Best BLEU so far is: 0.3868870002673553
+Best METEOR so far is: 0.5672690833494455
+18m 43s (- 110m 43s) (13100 14%) train_loss: 1.8815, train_mt_loss: 1.8869, train_vse_loss: 1.3463
+18m 49s (- 110m 25s) (13200 14%) train_loss: 1.7705, train_mt_loss: 1.7753, train_vse_loss: 1.3017
+18m 56s (- 110m 4s) (13300 14%) train_loss: 1.7120, train_mt_loss: 1.7161, train_vse_loss: 1.3122
+19m 3s (- 109m 46s) (13400 14%) train_loss: 2.0193, train_mt_loss: 2.0263, train_vse_loss: 1.3254
+19m 9s (- 109m 27s) (13500 14%) train_loss: 1.8444, train_mt_loss: 1.8489, train_vse_loss: 1.4002
+19m 16s (- 109m 10s) (13600 15%) train_loss: 2.0794, train_mt_loss: 2.0872, train_vse_loss: 1.3066
+19m 23s (- 108m 53s) (13700 15%) train_loss: 1.8946, train_mt_loss: 1.8993, train_vse_loss: 1.4319
+19m 30s (- 108m 35s) (13800 15%) train_loss: 1.8337, train_mt_loss: 1.8382, train_vse_loss: 1.3888
+19m 37s (- 108m 16s) (13900 15%) train_loss: 1.8210, train_mt_loss: 1.8244, train_vse_loss: 1.4834
+19m 44s (- 107m 58s) (14000 15%) train_loss: 1.8352, train_mt_loss: 1.8399, train_vse_loss: 1.3696
+dev_loss: 2.4810382149049213, dev_mt_loss: 2.4982900082000663, dev_vse_loss: 0.773108643080507, dev_bleu: 0.3915380514409605, dev_meteor: 0.569817254722772
+Image Retrieval Accuracy is:
+r1: 57.396449704142015, r5: 88.46153846153847, r10: 95.06903353057199
+An example demo:
+src: street scene of blond woman in gold coat and pink mini-skirt in front of a rear-facing police motorcycle .
+ref: straßenszene mit einer blonden frau in goldfarbenem mantel und minirock vor einem polizeimotorrad , das von hinten zu sehen ist .
+pred: eine straßenszene von blonden frau in einem goldenen mantel und einem rosa bedruckten rock vor einem dad-motorrad .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.436460387493883
+Best BLEU so far is: 0.3915380514409605
+Best METEOR so far is: 0.569817254722772
+20m 0s (- 108m 34s) (14100 15%) train_loss: 1.8448, train_mt_loss: 1.8506, train_vse_loss: 1.2699
+20m 7s (- 108m 16s) (14200 15%) train_loss: 1.9010, train_mt_loss: 1.9065, train_vse_loss: 1.3586
+20m 14s (- 107m 59s) (14300 15%) train_loss: 1.7561, train_mt_loss: 1.7601, train_vse_loss: 1.3578
+20m 21s (- 107m 41s) (14400 15%) train_loss: 1.7249, train_mt_loss: 1.7285, train_vse_loss: 1.3654
+20m 27s (- 107m 23s) (14500 16%) train_loss: 1.8484, train_mt_loss: 1.8522, train_vse_loss: 1.4725
+20m 34s (- 107m 7s) (14600 16%) train_loss: 1.8082, train_mt_loss: 1.8129, train_vse_loss: 1.3423
+20m 41s (- 106m 50s) (14700 16%) train_loss: 1.7473, train_mt_loss: 1.7523, train_vse_loss: 1.2460
+20m 48s (- 106m 33s) (14800 16%) train_loss: 1.8452, train_mt_loss: 1.8492, train_vse_loss: 1.4532
+20m 55s (- 106m 16s) (14900 16%) train_loss: 1.8478, train_mt_loss: 1.8538, train_vse_loss: 1.2518
+21m 1s (- 106m 0s) (15000 16%) train_loss: 1.8382, train_mt_loss: 1.8446, train_vse_loss: 1.2047
+dev_loss: 2.707391840006624, dev_mt_loss: 2.7268962445003644, dev_vse_loss: 0.7764515355229378, dev_bleu: 0.38975736445552694, dev_meteor: 0.5682095782739823
+Image Retrieval Accuracy is:
+r1: 57.19921104536489, r5: 87.67258382642999, r10: 93.98422090729782
+An example demo:
+src: young people are engaged in a game .
+ref: junge menschen sind mit einem spiel beschäftigt .
+pred: junge personen spielen ein spiel .
+Current Early_Stop Counting: 9
+Best Loss so far is: 2.436460387493883
+Best BLEU so far is: 0.3915380514409605
+Best METEOR so far is: 0.569817254722772
+21m 18s (- 106m 30s) (15100 16%) train_loss: 1.8280, train_mt_loss: 1.8334, train_vse_loss: 1.2931
+21m 26s (- 106m 20s) (15200 16%) train_loss: 1.6592, train_mt_loss: 1.6635, train_vse_loss: 1.2408
+21m 34s (- 106m 9s) (15300 16%) train_loss: 1.8495, train_mt_loss: 1.8560, train_vse_loss: 1.2008
+21m 41s (- 105m 56s) (15400 16%) train_loss: 1.6767, train_mt_loss: 1.6809, train_vse_loss: 1.2570
+21m 49s (- 105m 43s) (15500 17%) train_loss: 1.8506, train_mt_loss: 1.8568, train_vse_loss: 1.2378
+21m 56s (- 105m 30s) (15600 17%) train_loss: 1.9602, train_mt_loss: 1.9669, train_vse_loss: 1.2962
+22m 4s (- 105m 16s) (15700 17%) train_loss: 1.7725, train_mt_loss: 1.7764, train_vse_loss: 1.3847
+22m 11s (- 105m 1s) (15800 17%) train_loss: 1.7572, train_mt_loss: 1.7614, train_vse_loss: 1.3472
+22m 18s (- 104m 47s) (15900 17%) train_loss: 1.7935, train_mt_loss: 1.7994, train_vse_loss: 1.2126
+22m 26s (- 104m 36s) (16000 17%) train_loss: 1.8494, train_mt_loss: 1.8557, train_vse_loss: 1.2299
+dev_loss: 2.5927060608352934, dev_mt_loss: 2.6124127028243884, dev_vse_loss: 0.6417468009250504, dev_bleu: 0.38966592220758606, dev_meteor: 0.5641493121383528
+Image Retrieval Accuracy is:
+r1: 60.45364891518738, r5: 89.54635108481263, r10: 95.06903353057199
+An example demo:
+src: this child is in a classroom , finished for the day , maybe
+ref: dieses kind befindet sich in einem klassenraum und vielleicht ist die schule für heute aus
+pred: dieses kind befindet sich in einem klassenzimmer für den tag .
+Current Early_Stop Counting: 8
+Best Loss so far is: 2.436460387493883
+Best BLEU so far is: 0.3915380514409605
+Best METEOR so far is: 0.569817254722772
+22m 42s (- 105m 2s) (16100 17%) train_loss: 1.7554, train_mt_loss: 1.7601, train_vse_loss: 1.2964
+22m 49s (- 104m 49s) (16200 17%) train_loss: 1.7751, train_mt_loss: 1.7805, train_vse_loss: 1.2419
+22m 56s (- 104m 36s) (16300 17%) train_loss: 1.8528, train_mt_loss: 1.8572, train_vse_loss: 1.4100
+23m 4s (- 104m 24s) (16400 18%) train_loss: 1.6865, train_mt_loss: 1.6899, train_vse_loss: 1.3529
+23m 12s (- 104m 13s) (16500 18%) train_loss: 1.7681, train_mt_loss: 1.7730, train_vse_loss: 1.2784
+23m 20s (- 104m 1s) (16600 18%) train_loss: 1.7212, train_mt_loss: 1.7248, train_vse_loss: 1.3566
+23m 27s (- 103m 46s) (16700 18%) train_loss: 1.6214, train_mt_loss: 1.6235, train_vse_loss: 1.4223
+23m 34s (- 103m 32s) (16800 18%) train_loss: 1.6202, train_mt_loss: 1.6253, train_vse_loss: 1.1153
+23m 42s (- 103m 22s) (16900 18%) train_loss: 1.7495, train_mt_loss: 1.7550, train_vse_loss: 1.2009
+23m 49s (- 103m 7s) (17000 18%) train_loss: 1.5375, train_mt_loss: 1.5405, train_vse_loss: 1.2407
+dev_loss: 2.5736985792006766, dev_mt_loss: 2.592733023422105, dev_vse_loss: 0.6892858408391476, dev_bleu: 0.4000070123209181, dev_meteor: 0.5760106333542676
+Image Retrieval Accuracy is:
+r1: 60.05917159763314, r5: 89.64497041420118, r10: 94.87179487179488
+An example demo:
+src: a woman carrying another woman wearing matching exercise attire on her back .
+ref: eine frau trägt eine andere frau mit gleicher sportkleidung auf ihrem rücken .
+pred: eine frau trägt eine andere frau in zueinander passenden bekleidung auf dem rücken .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.436460387493883
+Best BLEU so far is: 0.4000070123209181
+Best METEOR so far is: 0.5760106333542676
+24m 9s (- 103m 49s) (17100 18%) train_loss: 1.6482, train_mt_loss: 1.6526, train_vse_loss: 1.2105
+24m 16s (- 103m 37s) (17200 18%) train_loss: 1.8075, train_mt_loss: 1.8132, train_vse_loss: 1.2519
+24m 24s (- 103m 23s) (17300 19%) train_loss: 1.7258, train_mt_loss: 1.7301, train_vse_loss: 1.3051
+24m 31s (- 103m 8s) (17400 19%) train_loss: 1.4736, train_mt_loss: 1.4756, train_vse_loss: 1.2734
+24m 38s (- 102m 56s) (17500 19%) train_loss: 1.7309, train_mt_loss: 1.7352, train_vse_loss: 1.3054
+24m 45s (- 102m 42s) (17600 19%) train_loss: 1.7098, train_mt_loss: 1.7133, train_vse_loss: 1.3604
+24m 53s (- 102m 29s) (17700 19%) train_loss: 1.5308, train_mt_loss: 1.5344, train_vse_loss: 1.1679
+24m 59s (- 102m 13s) (17800 19%) train_loss: 1.4863, train_mt_loss: 1.4905, train_vse_loss: 1.0704
+25m 6s (- 101m 59s) (17900 19%) train_loss: 1.8254, train_mt_loss: 1.8321, train_vse_loss: 1.1616
+25m 13s (- 101m 44s) (18000 19%) train_loss: 1.6161, train_mt_loss: 1.6200, train_vse_loss: 1.2324
+dev_loss: 2.5609583609870503, dev_mt_loss: 2.579058361904962, dev_vse_loss: 0.769055117986032, dev_bleu: 0.3986433684920887, dev_meteor: 0.5744134752971451
+Image Retrieval Accuracy is:
+r1: 60.05917159763314, r5: 88.65877712031558, r10: 93.98422090729782
+An example demo:
+src: a white woman and black man walking down the street .
+ref: eine weiße frau und ein schwarzer mann gehen eine straße entlang .
+pred: eine weiße frau und ein schwarzer mann gehen die straße entlang .
+Current Early_Stop Counting: 9
+Best Loss so far is: 2.436460387493883
+Best BLEU so far is: 0.4000070123209181
+Best METEOR so far is: 0.5760106333542676
+25m 28s (- 102m 1s) (18100 19%) train_loss: 1.6513, train_mt_loss: 1.6557, train_vse_loss: 1.2145
+25m 35s (- 101m 47s) (18200 20%) train_loss: 1.6979, train_mt_loss: 1.7041, train_vse_loss: 1.0801
+25m 42s (- 101m 32s) (18300 20%) train_loss: 1.6431, train_mt_loss: 1.6474, train_vse_loss: 1.2165
+25m 49s (- 101m 19s) (18400 20%) train_loss: 1.7340, train_mt_loss: 1.7391, train_vse_loss: 1.2300
+25m 57s (- 101m 9s) (18500 20%) train_loss: 1.5772, train_mt_loss: 1.5809, train_vse_loss: 1.2059
+26m 4s (- 100m 57s) (18600 20%) train_loss: 1.4403, train_mt_loss: 1.4438, train_vse_loss: 1.0908
+26m 11s (- 100m 44s) (18700 20%) train_loss: 1.6809, train_mt_loss: 1.6866, train_vse_loss: 1.1204
+26m 18s (- 100m 30s) (18800 20%) train_loss: 1.4284, train_mt_loss: 1.4303, train_vse_loss: 1.2403
+26m 26s (- 100m 19s) (18900 20%) train_loss: 1.6929, train_mt_loss: 1.6985, train_vse_loss: 1.1362
+26m 34s (- 100m 7s) (19000 20%) train_loss: 1.9135, train_mt_loss: 1.9219, train_vse_loss: 1.0791
+dev_loss: 2.4492967490639006, dev_mt_loss: 2.467803592128413, dev_vse_loss: 0.6171173926975045, dev_bleu: 0.3988325004107775, dev_meteor: 0.5735378467970758
+Image Retrieval Accuracy is:
+r1: 62.82051282051282, r5: 90.33530571992111, r10: 96.15384615384616
+An example demo:
+src: two people walking across a street .
+ref: zwei menschen überqueren eine straße .
+pred: zwei personen gehen über eine straße .
+Current Early_Stop Counting: 8
+Best Loss so far is: 2.436460387493883
+Best BLEU so far is: 0.4000070123209181
+Best METEOR so far is: 0.5760106333542676
+26m 50s (- 100m 28s) (19100 21%) train_loss: 1.5392, train_mt_loss: 1.5434, train_vse_loss: 1.1174
+26m 58s (- 100m 17s) (19200 21%) train_loss: 1.6452, train_mt_loss: 1.6489, train_vse_loss: 1.2854
+27m 5s (- 100m 5s) (19300 21%) train_loss: 1.5529, train_mt_loss: 1.5554, train_vse_loss: 1.3074
+27m 13s (- 99m 53s) (19400 21%) train_loss: 1.4691, train_mt_loss: 1.4709, train_vse_loss: 1.2908
+27m 20s (- 99m 42s) (19500 21%) train_loss: 1.5483, train_mt_loss: 1.5521, train_vse_loss: 1.1658
+27m 28s (- 99m 30s) (19600 21%) train_loss: 1.5915, train_mt_loss: 1.5968, train_vse_loss: 1.0604
+27m 35s (- 99m 18s) (19700 21%) train_loss: 1.5408, train_mt_loss: 1.5459, train_vse_loss: 1.0375
+27m 43s (- 99m 7s) (19800 21%) train_loss: 1.6245, train_mt_loss: 1.6304, train_vse_loss: 1.0391
+27m 50s (- 98m 55s) (19900 21%) train_loss: 1.6038, train_mt_loss: 1.6091, train_vse_loss: 1.0854
+27m 58s (- 98m 44s) (20000 22%) train_loss: 1.6034, train_mt_loss: 1.6074, train_vse_loss: 1.2060
+dev_loss: 2.382834052933114, dev_mt_loss: 2.400627786027534, dev_vse_loss: 0.6212530503315585, dev_bleu: 0.39880908133360166, dev_meteor: 0.5780424398380141
+Image Retrieval Accuracy is:
+r1: 61.6370808678501, r5: 90.82840236686391, r10: 95.06903353057199
+An example demo:
+src: two children are putting their faces into a knight and royal woman &apos;s picture .
+ref: zwei kinder stecken ihre gesichter in das bild eines ritters und einer königlichen dame .
+pred: zwei kinder schneiden ihre gesichter in einen ritter und werden von das bild eines mädchens .
+Current Early_Stop Counting: 7
+Best Loss so far is: 2.400627786027534
+Best BLEU so far is: 0.4000070123209181
+Best METEOR so far is: 0.5780424398380141
+28m 20s (- 99m 24s) (20100 22%) train_loss: 1.5894, train_mt_loss: 1.5941, train_vse_loss: 1.1253
+28m 27s (- 99m 10s) (20200 22%) train_loss: 1.5114, train_mt_loss: 1.5141, train_vse_loss: 1.2404
+28m 34s (- 98m 56s) (20300 22%) train_loss: 1.4507, train_mt_loss: 1.4538, train_vse_loss: 1.1407
+28m 40s (- 98m 41s) (20400 22%) train_loss: 1.3569, train_mt_loss: 1.3591, train_vse_loss: 1.1374
+28m 47s (- 98m 28s) (20500 22%) train_loss: 1.6424, train_mt_loss: 1.6487, train_vse_loss: 1.0231
+28m 54s (- 98m 12s) (20600 22%) train_loss: 1.3738, train_mt_loss: 1.3755, train_vse_loss: 1.2137
+29m 0s (- 97m 58s) (20700 22%) train_loss: 1.4578, train_mt_loss: 1.4615, train_vse_loss: 1.0910
+29m 7s (- 97m 44s) (20800 22%) train_loss: 1.5042, train_mt_loss: 1.5084, train_vse_loss: 1.0865
+29m 14s (- 97m 31s) (20900 23%) train_loss: 1.8435, train_mt_loss: 1.8518, train_vse_loss: 1.0308
+29m 21s (- 97m 18s) (21000 23%) train_loss: 1.7361, train_mt_loss: 1.7415, train_vse_loss: 1.2048
+dev_loss: 2.4580291644004837, dev_mt_loss: 2.4767540437169373, dev_vse_loss: 0.6042625377220767, dev_bleu: 0.39340020772476025, dev_meteor: 0.5697335483363195
+Image Retrieval Accuracy is:
+r1: 64.89151873767258, r5: 92.50493096646943, r10: 95.56213017751479
+An example demo:
+src: a child is reluctantly about to bite into a mushroom .
+ref: ein kind ist zögernd im begriff , in einen pilz zu beißen .
+pred: ein kind wird müt , um in einen pilz zu beißen .
+Current Early_Stop Counting: 6
+Best Loss so far is: 2.400627786027534
+Best BLEU so far is: 0.4000070123209181
+Best METEOR so far is: 0.5780424398380141
+29m 37s (- 97m 33s) (21100 23%) train_loss: 1.6820, train_mt_loss: 1.6872, train_vse_loss: 1.1637
+29m 43s (- 97m 19s) (21200 23%) train_loss: 1.5163, train_mt_loss: 1.5186, train_vse_loss: 1.2885
+29m 50s (- 97m 6s) (21300 23%) train_loss: 1.4534, train_mt_loss: 1.4566, train_vse_loss: 1.1336
+29m 57s (- 96m 53s) (21400 23%) train_loss: 1.4818, train_mt_loss: 1.4839, train_vse_loss: 1.2723
+30m 4s (- 96m 40s) (21500 23%) train_loss: 1.3973, train_mt_loss: 1.4016, train_vse_loss: 0.9692
+30m 11s (- 96m 26s) (21600 23%) train_loss: 1.4054, train_mt_loss: 1.4083, train_vse_loss: 1.1177
+30m 18s (- 96m 13s) (21700 23%) train_loss: 1.6456, train_mt_loss: 1.6511, train_vse_loss: 1.0949
+30m 25s (- 96m 0s) (21800 24%) train_loss: 1.5276, train_mt_loss: 1.5326, train_vse_loss: 1.0385
+30m 31s (- 95m 46s) (21900 24%) train_loss: 1.3223, train_mt_loss: 1.3243, train_vse_loss: 1.1211
+30m 38s (- 95m 33s) (22000 24%) train_loss: 1.7305, train_mt_loss: 1.7372, train_vse_loss: 1.0669
+dev_loss: 2.3877297224743024, dev_mt_loss: 2.405187875032425, dev_vse_loss: 0.6593705314610686, dev_bleu: 0.3976115027577218, dev_meteor: 0.5708673183932994
+Image Retrieval Accuracy is:
+r1: 60.552268244575934, r5: 90.03944773175543, r10: 95.46351084812623
+An example demo:
+src: a woman with blond-hair is drinking out of a glass .
+ref: eine frau mit blondem haar trinkt aus einem glas .
+pred: eine frau mit blonden haaren trinkt aus einem glas .
+Current Early_Stop Counting: 5
+Best Loss so far is: 2.400627786027534
+Best BLEU so far is: 0.4000070123209181
+Best METEOR so far is: 0.5780424398380141
+30m 53s (- 95m 45s) (22100 24%) train_loss: 1.6572, train_mt_loss: 1.6616, train_vse_loss: 1.2186
+31m 0s (- 95m 32s) (22200 24%) train_loss: 1.5933, train_mt_loss: 1.5986, train_vse_loss: 1.0641
+31m 7s (- 95m 21s) (22300 24%) train_loss: 1.6419, train_mt_loss: 1.6469, train_vse_loss: 1.1488
+31m 15s (- 95m 9s) (22400 24%) train_loss: 1.5513, train_mt_loss: 1.5582, train_vse_loss: 0.8679
+31m 23s (- 94m 59s) (22500 24%) train_loss: 1.5333, train_mt_loss: 1.5381, train_vse_loss: 1.0569
+31m 30s (- 94m 47s) (22600 24%) train_loss: 1.3628, train_mt_loss: 1.3648, train_vse_loss: 1.1714
+31m 37s (- 94m 36s) (22700 25%) train_loss: 1.5035, train_mt_loss: 1.5077, train_vse_loss: 1.0960
+31m 45s (- 94m 25s) (22800 25%) train_loss: 1.2370, train_mt_loss: 1.2382, train_vse_loss: 1.1248
+31m 53s (- 94m 16s) (22900 25%) train_loss: 1.6592, train_mt_loss: 1.6644, train_vse_loss: 1.1524
+32m 0s (- 94m 5s) (23000 25%) train_loss: 1.5964, train_mt_loss: 1.6016, train_vse_loss: 1.0791
+dev_loss: 2.5724547090274945, dev_mt_loss: 2.5924762998308455, dev_vse_loss: 0.5903163797089032, dev_bleu: 0.40256571129755414, dev_meteor: 0.5774353482328839
+Image Retrieval Accuracy is:
+r1: 65.18737672583826, r5: 90.23668639053254, r10: 95.56213017751479
+An example demo:
+src: two watercrafts , one red and one white , are making a big splash in the water .
+ref: zwei wasserfahrzeuge , von denen eines rot und das andere weiß ist , wirbeln eine menge spritzwasser auf .
+pred: ein rot und ein rot-weißes kind machen ein großes wasser ins wasser .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.400627786027534
+Best BLEU so far is: 0.40256571129755414
+Best METEOR so far is: 0.5780424398380141
+32m 18s (- 94m 23s) (23100 25%) train_loss: 1.2975, train_mt_loss: 1.3004, train_vse_loss: 1.0033
+32m 24s (- 94m 9s) (23200 25%) train_loss: 1.6165, train_mt_loss: 1.6215, train_vse_loss: 1.1191
+32m 31s (- 93m 56s) (23300 25%) train_loss: 1.4291, train_mt_loss: 1.4333, train_vse_loss: 1.0080
+32m 38s (- 93m 43s) (23400 25%) train_loss: 1.5507, train_mt_loss: 1.5561, train_vse_loss: 1.0109
+32m 45s (- 93m 31s) (23500 25%) train_loss: 1.4745, train_mt_loss: 1.4784, train_vse_loss: 1.0877
+32m 51s (- 93m 18s) (23600 26%) train_loss: 1.5361, train_mt_loss: 1.5399, train_vse_loss: 1.1577
+32m 58s (- 93m 5s) (23700 26%) train_loss: 1.5625, train_mt_loss: 1.5658, train_vse_loss: 1.2372
+33m 5s (- 92m 53s) (23800 26%) train_loss: 1.5263, train_mt_loss: 1.5306, train_vse_loss: 1.1012
+33m 12s (- 92m 41s) (23900 26%) train_loss: 1.5284, train_mt_loss: 1.5332, train_vse_loss: 1.0487
+33m 19s (- 92m 28s) (24000 26%) train_loss: 1.3432, train_mt_loss: 1.3462, train_vse_loss: 1.0551
+dev_loss: 2.6273464411497116, dev_mt_loss: 2.6471786770437444, dev_vse_loss: 0.6639528716249126, dev_bleu: 0.403314638977324, dev_meteor: 0.5747052558704289
+Image Retrieval Accuracy is:
+r1: 61.93293885601578, r5: 90.33530571992111, r10: 95.36489151873768
+An example demo:
+src: a man pulls on his sweater as a kayak lays at his feet .
+ref: ein mann zieht seinen pullover an , während zu seinen füßen ein kajak liegt .
+pred: ein mann zieht seinen pullover an , während ein kajak an seinen füßen liegt .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.400627786027534
+Best BLEU so far is: 0.403314638977324
+Best METEOR so far is: 0.5780424398380141
+33m 36s (- 92m 43s) (24100 26%) train_loss: 1.6291, train_mt_loss: 1.6343, train_vse_loss: 1.1114
+33m 43s (- 92m 31s) (24200 26%) train_loss: 1.6609, train_mt_loss: 1.6662, train_vse_loss: 1.1392
+33m 49s (- 92m 18s) (24300 26%) train_loss: 1.2395, train_mt_loss: 1.2431, train_vse_loss: 0.8792
+33m 56s (- 92m 5s) (24400 26%) train_loss: 1.3458, train_mt_loss: 1.3488, train_vse_loss: 1.0526
+34m 3s (- 91m 53s) (24500 27%) train_loss: 1.4062, train_mt_loss: 1.4095, train_vse_loss: 1.0769
+34m 10s (- 91m 41s) (24600 27%) train_loss: 1.5377, train_mt_loss: 1.5423, train_vse_loss: 1.0875
+34m 17s (- 91m 29s) (24700 27%) train_loss: 1.3595, train_mt_loss: 1.3623, train_vse_loss: 1.0848
+34m 24s (- 91m 17s) (24800 27%) train_loss: 1.4827, train_mt_loss: 1.4864, train_vse_loss: 1.1142
+34m 31s (- 91m 4s) (24900 27%) train_loss: 1.4426, train_mt_loss: 1.4467, train_vse_loss: 1.0384
+34m 38s (- 90m 52s) (25000 27%) train_loss: 1.6795, train_mt_loss: 1.6854, train_vse_loss: 1.0936
+dev_loss: 2.6395165270992687, dev_mt_loss: 2.660320880157607, dev_vse_loss: 0.5798824530627046, dev_bleu: 0.3928067687677175, dev_meteor: 0.576864740565973
+Image Retrieval Accuracy is:
+r1: 64.20118343195266, r5: 91.22287968441815, r10: 95.85798816568047
+An example demo:
+src: a view of a street lined with large , clean buildings .
+ref: blick in eine straße , die von großen , sauberen gebäuden gesäumt wird .
+pred: blick auf eine straße an einer straße , die mit graffitis bemalt ist , an einer straße .
+Current Early_Stop Counting: 9
+Best Loss so far is: 2.400627786027534
+Best BLEU so far is: 0.403314638977324
+Best METEOR so far is: 0.5780424398380141
+34m 53s (- 91m 3s) (25100 27%) train_loss: 1.5175, train_mt_loss: 1.5220, train_vse_loss: 1.0715
+35m 0s (- 90m 52s) (25200 27%) train_loss: 1.5914, train_mt_loss: 1.5986, train_vse_loss: 0.8762
+35m 7s (- 90m 39s) (25300 27%) train_loss: 1.1897, train_mt_loss: 1.1897, train_vse_loss: 1.1934
+35m 14s (- 90m 26s) (25400 28%) train_loss: 1.2487, train_mt_loss: 1.2514, train_vse_loss: 0.9899
+35m 21s (- 90m 15s) (25500 28%) train_loss: 1.4331, train_mt_loss: 1.4363, train_vse_loss: 1.1191
+35m 27s (- 90m 2s) (25600 28%) train_loss: 1.5180, train_mt_loss: 1.5230, train_vse_loss: 1.0232
+35m 34s (- 89m 51s) (25700 28%) train_loss: 1.5547, train_mt_loss: 1.5604, train_vse_loss: 0.9940
+35m 41s (- 89m 39s) (25800 28%) train_loss: 1.3659, train_mt_loss: 1.3683, train_vse_loss: 1.1246
+35m 48s (- 89m 28s) (25900 28%) train_loss: 1.6907, train_mt_loss: 1.6968, train_vse_loss: 1.0868
+35m 55s (- 89m 16s) (26000 28%) train_loss: 1.3737, train_mt_loss: 1.3758, train_vse_loss: 1.1602
+dev_loss: 2.308359729392188, dev_mt_loss: 2.324632949062756, dev_vse_loss: 0.6973103029387338, dev_bleu: 0.3923799127980748, dev_meteor: 0.5713579752123084
+Image Retrieval Accuracy is:
+r1: 60.74950690335306, r5: 90.13806706114399, r10: 96.05522682445759
+An example demo:
+src: sailors stand at the top of a gangplank to a large boat .
+ref: seeleute stehen oben an einer laufplanke , die auf ein großes schiff führt .
+pred: ein matrose steht oben auf einem großen boot aus einem großen boot .
+Current Early_Stop Counting: 8
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.403314638977324
+Best METEOR so far is: 0.5780424398380141
+36m 14s (- 89m 34s) (26100 28%) train_loss: 1.4513, train_mt_loss: 1.4558, train_vse_loss: 1.0095
+36m 21s (- 89m 22s) (26200 28%) train_loss: 1.2689, train_mt_loss: 1.2713, train_vse_loss: 1.0344
+36m 28s (- 89m 10s) (26300 29%) train_loss: 1.3534, train_mt_loss: 1.3560, train_vse_loss: 1.0880
+36m 35s (- 88m 58s) (26400 29%) train_loss: 1.2446, train_mt_loss: 1.2476, train_vse_loss: 0.9531
+36m 42s (- 88m 46s) (26500 29%) train_loss: 1.2684, train_mt_loss: 1.2697, train_vse_loss: 1.1391
+36m 49s (- 88m 35s) (26600 29%) train_loss: 1.4845, train_mt_loss: 1.4901, train_vse_loss: 0.9335
+36m 55s (- 88m 23s) (26700 29%) train_loss: 1.4552, train_mt_loss: 1.4602, train_vse_loss: 0.9665
+37m 2s (- 88m 11s) (26800 29%) train_loss: 1.5006, train_mt_loss: 1.5052, train_vse_loss: 1.0413
+37m 9s (- 88m 0s) (26900 29%) train_loss: 1.4410, train_mt_loss: 1.4454, train_vse_loss: 1.0120
+37m 16s (- 87m 48s) (27000 29%) train_loss: 1.4766, train_mt_loss: 1.4817, train_vse_loss: 0.9758
+dev_loss: 2.4852772301861217, dev_mt_loss: 2.503861015396459, dev_vse_loss: 0.64548156570111, dev_bleu: 0.3822225775317727, dev_meteor: 0.5657625188083917
+Image Retrieval Accuracy is:
+r1: 61.53846153846154, r5: 89.74358974358974, r10: 95.06903353057199
+An example demo:
+src: a blue jeep drive into deep , muddy water .
+ref: ein blauer jeep fährt in tiefes , schlammiges wasser .
+pred: ein blauer jeep fährt in tiefe , schlammiges wasser .
+Current Early_Stop Counting: 7
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.403314638977324
+Best METEOR so far is: 0.5780424398380141
+37m 31s (- 87m 55s) (27100 29%) train_loss: 1.2011, train_mt_loss: 1.2031, train_vse_loss: 1.0017
+37m 38s (- 87m 43s) (27200 30%) train_loss: 1.2992, train_mt_loss: 1.3019, train_vse_loss: 1.0226
+37m 44s (- 87m 31s) (27300 30%) train_loss: 1.5890, train_mt_loss: 1.5947, train_vse_loss: 1.0216
+37m 51s (- 87m 19s) (27400 30%) train_loss: 1.2893, train_mt_loss: 1.2921, train_vse_loss: 1.0106
+37m 58s (- 87m 8s) (27500 30%) train_loss: 1.3231, train_mt_loss: 1.3259, train_vse_loss: 1.0493
+38m 5s (- 86m 56s) (27600 30%) train_loss: 1.3485, train_mt_loss: 1.3519, train_vse_loss: 1.0135
+38m 12s (- 86m 45s) (27700 30%) train_loss: 1.5296, train_mt_loss: 1.5343, train_vse_loss: 1.0588
+38m 19s (- 86m 34s) (27800 30%) train_loss: 1.2964, train_mt_loss: 1.2975, train_vse_loss: 1.1863
+38m 26s (- 86m 23s) (27900 30%) train_loss: 1.5867, train_mt_loss: 1.5919, train_vse_loss: 1.0752
+38m 33s (- 86m 12s) (28000 30%) train_loss: 1.4695, train_mt_loss: 1.4748, train_vse_loss: 0.9488
+dev_loss: 2.3824154617530957, dev_mt_loss: 2.3996864653059413, dev_vse_loss: 0.6725824608334473, dev_bleu: 0.396107846011654, dev_meteor: 0.5759775812566985
+Image Retrieval Accuracy is:
+r1: 65.58185404339251, r5: 91.12426035502959, r10: 95.95660749506904
+An example demo:
+src: a biker doing a jump in a forest .
+ref: ein radfahrer vollführt einen sprung in einem wald .
+pred: ein radfahrer macht einen sprung in einem wald .
+Current Early_Stop Counting: 6
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.403314638977324
+Best METEOR so far is: 0.5780424398380141
+38m 49s (- 86m 21s) (28100 31%) train_loss: 1.6241, train_mt_loss: 1.6311, train_vse_loss: 0.9235
+38m 56s (- 86m 10s) (28200 31%) train_loss: 1.4501, train_mt_loss: 1.4555, train_vse_loss: 0.9144
+39m 3s (- 85m 59s) (28300 31%) train_loss: 1.2444, train_mt_loss: 1.2475, train_vse_loss: 0.9370
+39m 10s (- 85m 47s) (28400 31%) train_loss: 1.4152, train_mt_loss: 1.4188, train_vse_loss: 1.0605
+39m 16s (- 85m 35s) (28500 31%) train_loss: 1.1581, train_mt_loss: 1.1584, train_vse_loss: 1.1243
+39m 24s (- 85m 24s) (28600 31%) train_loss: 1.4676, train_mt_loss: 1.4717, train_vse_loss: 1.0562
+39m 30s (- 85m 13s) (28700 31%) train_loss: 1.2739, train_mt_loss: 1.2757, train_vse_loss: 1.0961
+39m 37s (- 85m 2s) (28800 31%) train_loss: 1.3154, train_mt_loss: 1.3175, train_vse_loss: 1.1039
+39m 44s (- 84m 51s) (28900 31%) train_loss: 1.3206, train_mt_loss: 1.3242, train_vse_loss: 0.9624
+39m 51s (- 84m 40s) (29000 32%) train_loss: 1.2469, train_mt_loss: 1.2499, train_vse_loss: 0.9522
+dev_loss: 2.754629309954388, dev_mt_loss: 2.776589023082384, dev_vse_loss: 0.580614048987627, dev_bleu: 0.39985421534977544, dev_meteor: 0.57480570524317
+Image Retrieval Accuracy is:
+r1: 64.89151873767258, r5: 90.72978303747534, r10: 95.75936883629191
+An example demo:
+src: young adults dressed casually walk around in a field .
+ref: junge erwachsene in freizeitkleidung gehen auf einer wiese umher .
+pred: junge erwachsene in freizeitkleidung gehen über ein feld .
+Current Early_Stop Counting: 5
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.403314638977324
+Best METEOR so far is: 0.5780424398380141
+40m 7s (- 84m 47s) (29100 32%) train_loss: 1.2140, train_mt_loss: 1.2160, train_vse_loss: 1.0108
+40m 14s (- 84m 36s) (29200 32%) train_loss: 1.5140, train_mt_loss: 1.5190, train_vse_loss: 1.0149
+40m 21s (- 84m 26s) (29300 32%) train_loss: 1.4267, train_mt_loss: 1.4307, train_vse_loss: 1.0219
+40m 28s (- 84m 15s) (29400 32%) train_loss: 1.2413, train_mt_loss: 1.2431, train_vse_loss: 1.0586
+40m 35s (- 84m 4s) (29500 32%) train_loss: 1.2979, train_mt_loss: 1.3015, train_vse_loss: 0.9475
+40m 42s (- 83m 53s) (29600 32%) train_loss: 1.3866, train_mt_loss: 1.3901, train_vse_loss: 1.0409
+40m 49s (- 83m 42s) (29700 32%) train_loss: 1.2868, train_mt_loss: 1.2895, train_vse_loss: 1.0220
+40m 56s (- 83m 31s) (29800 32%) train_loss: 1.5506, train_mt_loss: 1.5559, train_vse_loss: 1.0270
+41m 3s (- 83m 20s) (29900 33%) train_loss: 1.3185, train_mt_loss: 1.3219, train_vse_loss: 0.9813
+41m 10s (- 83m 10s) (30000 33%) train_loss: 1.4677, train_mt_loss: 1.4728, train_vse_loss: 0.9675
+dev_loss: 2.8348276061671123, dev_mt_loss: 2.8576180253710066, dev_vse_loss: 0.5785732588597706, dev_bleu: 0.3950487016023649, dev_meteor: 0.5692129569796249
+Image Retrieval Accuracy is:
+r1: 65.48323471400394, r5: 91.3214990138067, r10: 95.85798816568047
+An example demo:
+src: an elderly woman wearing a blue hat is sitting on the sidewalk chopping something yellow on a board beside her .
+ref: eine ältere frau mit einer blauen mütze sitzt auf dem gehweg und hackt etwas gelbes auf einem brett neben sich .
+pred: eine ältere frau mit einem blauen hut sitzt auf dem gehweg und schneidet etwas gelbes auf einem brett neben ihr .
+Current Early_Stop Counting: 4
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.403314638977324
+Best METEOR so far is: 0.5780424398380141
+41m 25s (- 83m 16s) (30100 33%) train_loss: 1.2066, train_mt_loss: 1.2084, train_vse_loss: 1.0311
+41m 32s (- 83m 5s) (30200 33%) train_loss: 1.1268, train_mt_loss: 1.1276, train_vse_loss: 1.0438
+41m 39s (- 82m 54s) (30300 33%) train_loss: 1.3644, train_mt_loss: 1.3680, train_vse_loss: 1.0053
+41m 46s (- 82m 43s) (30400 33%) train_loss: 1.4046, train_mt_loss: 1.4090, train_vse_loss: 0.9718
+41m 53s (- 82m 33s) (30500 33%) train_loss: 1.4550, train_mt_loss: 1.4598, train_vse_loss: 0.9856
+42m 0s (- 82m 23s) (30600 33%) train_loss: 1.4423, train_mt_loss: 1.4459, train_vse_loss: 1.0819
+42m 7s (- 82m 12s) (30700 33%) train_loss: 1.2012, train_mt_loss: 1.2032, train_vse_loss: 0.9953
+42m 15s (- 82m 2s) (30800 33%) train_loss: 1.4976, train_mt_loss: 1.5038, train_vse_loss: 0.8805
+42m 22s (- 81m 51s) (30900 34%) train_loss: 1.2032, train_mt_loss: 1.2066, train_vse_loss: 0.8690
+42m 29s (- 81m 40s) (31000 34%) train_loss: 1.3333, train_mt_loss: 1.3374, train_vse_loss: 0.9232
+dev_loss: 2.6910018186484064, dev_mt_loss: 2.712323340986456, dev_vse_loss: 0.5801682583987713, dev_bleu: 0.4027720966133512, dev_meteor: 0.5789750830768291
+Image Retrieval Accuracy is:
+r1: 60.552268244575934, r5: 90.82840236686391, r10: 95.85798816568047
+An example demo:
+src: a competitive runner taking her first sprint in a competition .
+ref: eine läuferin unternimmt ihren ersten sprint in einem wettkampf .
+pred: eine läuferin nimmt an einem wettkampf einem wettkampf teil .
+Current Early_Stop Counting: 3
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.403314638977324
+Best METEOR so far is: 0.5789750830768291
+42m 45s (- 81m 47s) (31100 34%) train_loss: 1.2118, train_mt_loss: 1.2140, train_vse_loss: 0.9939
+42m 52s (- 81m 36s) (31200 34%) train_loss: 1.3233, train_mt_loss: 1.3267, train_vse_loss: 0.9931
+42m 58s (- 81m 26s) (31300 34%) train_loss: 1.4537, train_mt_loss: 1.4584, train_vse_loss: 0.9928
+43m 5s (- 81m 14s) (31400 34%) train_loss: 1.2817, train_mt_loss: 1.2838, train_vse_loss: 1.0731
+43m 12s (- 81m 4s) (31500 34%) train_loss: 1.4490, train_mt_loss: 1.4532, train_vse_loss: 1.0390
+43m 19s (- 80m 53s) (31600 34%) train_loss: 1.3149, train_mt_loss: 1.3178, train_vse_loss: 1.0239
+43m 26s (- 80m 43s) (31700 34%) train_loss: 1.0912, train_mt_loss: 1.0942, train_vse_loss: 0.7999
+43m 33s (- 80m 32s) (31800 35%) train_loss: 1.1777, train_mt_loss: 1.1808, train_vse_loss: 0.8731
+43m 40s (- 80m 21s) (31900 35%) train_loss: 1.2009, train_mt_loss: 1.2041, train_vse_loss: 0.8830
+43m 47s (- 80m 11s) (32000 35%) train_loss: 1.2418, train_mt_loss: 1.2436, train_vse_loss: 1.0644
+dev_loss: 2.6036756581493785, dev_mt_loss: 2.6235250873225078, dev_vse_loss: 0.6385791913739273, dev_bleu: 0.39635391956252697, dev_meteor: 0.5716454194473602
+Image Retrieval Accuracy is:
+r1: 64.20118343195266, r5: 90.82840236686391, r10: 95.75936883629191
+An example demo:
+src: a band is playing music on stage at a concert .
+ref: eine band spielt bei einem konzert musik auf einer bühne .
+pred: eine band spielt auf der bühne bei einem konzert .
+Current Early_Stop Counting: 2
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.403314638977324
+Best METEOR so far is: 0.5789750830768291
+44m 2s (- 80m 16s) (32100 35%) train_loss: 1.3761, train_mt_loss: 1.3796, train_vse_loss: 1.0317
+44m 9s (- 80m 5s) (32200 35%) train_loss: 1.5657, train_mt_loss: 1.5712, train_vse_loss: 1.0209
+44m 16s (- 79m 55s) (32300 35%) train_loss: 1.5941, train_mt_loss: 1.5999, train_vse_loss: 1.0207
+44m 23s (- 79m 45s) (32400 35%) train_loss: 1.2332, train_mt_loss: 1.2352, train_vse_loss: 1.0342
+44m 30s (- 79m 34s) (32500 35%) train_loss: 1.3415, train_mt_loss: 1.3443, train_vse_loss: 1.0719
+44m 37s (- 79m 23s) (32600 35%) train_loss: 1.1824, train_mt_loss: 1.1851, train_vse_loss: 0.9145
+44m 44s (- 79m 12s) (32700 36%) train_loss: 1.1692, train_mt_loss: 1.1720, train_vse_loss: 0.8896
+44m 51s (- 79m 2s) (32800 36%) train_loss: 1.3878, train_mt_loss: 1.3923, train_vse_loss: 0.9350
+44m 58s (- 78m 52s) (32900 36%) train_loss: 1.2763, train_mt_loss: 1.2795, train_vse_loss: 0.9574
+45m 5s (- 78m 42s) (33000 36%) train_loss: 1.2029, train_mt_loss: 1.2041, train_vse_loss: 1.0886
+dev_loss: 2.886572800576687, dev_mt_loss: 2.9098449934806143, dev_vse_loss: 0.5826204850205353, dev_bleu: 0.404209461019048, dev_meteor: 0.5785285426433444
+Image Retrieval Accuracy is:
+r1: 65.77909270216962, r5: 91.3214990138067, r10: 95.56213017751479
+An example demo:
+src: a youth football game wherein three youths are fighting for a football .
+ref: ein jugend-footballspiel , bei dem drei jugendliche um den football kämpfen .
+pred: ein jugendliche footballspieler bei einem fußballspiel in drei jugendliche kämpfen um einen football .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.404209461019048
+Best METEOR so far is: 0.5789750830768291
+45m 21s (- 78m 48s) (33100 36%) train_loss: 1.2573, train_mt_loss: 1.2597, train_vse_loss: 1.0183
+45m 28s (- 78m 37s) (33200 36%) train_loss: 1.3382, train_mt_loss: 1.3411, train_vse_loss: 1.0459
+45m 35s (- 78m 27s) (33300 36%) train_loss: 1.2922, train_mt_loss: 1.2949, train_vse_loss: 1.0275
+45m 42s (- 78m 16s) (33400 36%) train_loss: 1.2579, train_mt_loss: 1.2593, train_vse_loss: 1.1198
+45m 48s (- 78m 5s) (33500 36%) train_loss: 1.2286, train_mt_loss: 1.2309, train_vse_loss: 0.9960
+45m 55s (- 77m 54s) (33600 37%) train_loss: 1.1435, train_mt_loss: 1.1456, train_vse_loss: 0.9318
+46m 2s (- 77m 44s) (33700 37%) train_loss: 1.1790, train_mt_loss: 1.1817, train_vse_loss: 0.9144
+46m 9s (- 77m 33s) (33800 37%) train_loss: 1.1395, train_mt_loss: 1.1412, train_vse_loss: 0.9705
+46m 16s (- 77m 23s) (33900 37%) train_loss: 1.1421, train_mt_loss: 1.1437, train_vse_loss: 0.9775
+46m 23s (- 77m 13s) (34000 37%) train_loss: 1.1792, train_mt_loss: 1.1816, train_vse_loss: 0.9434
+dev_loss: 2.8500057426946506, dev_mt_loss: 2.872764897133623, dev_vse_loss: 0.596848398979221, dev_bleu: 0.397169639110894, dev_meteor: 0.5768144557343943
+Image Retrieval Accuracy is:
+r1: 65.48323471400394, r5: 92.3076923076923, r10: 95.95660749506904
+An example demo:
+src: people are crossing a tree lined street in front of a building .
+ref: menschen überqueren eine baumgesäumte straße vor einem gebäude .
+pred: leute überqueren auf einem gebäude eine von bäumen gesäumten straße .
+Current Early_Stop Counting: 9
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.404209461019048
+Best METEOR so far is: 0.5789750830768291
+46m 38s (- 77m 17s) (34100 37%) train_loss: 1.1644, train_mt_loss: 1.1663, train_vse_loss: 0.9744
+46m 45s (- 77m 7s) (34200 37%) train_loss: 1.1707, train_mt_loss: 1.1725, train_vse_loss: 0.9934
+46m 52s (- 76m 56s) (34300 37%) train_loss: 1.2568, train_mt_loss: 1.2599, train_vse_loss: 0.9516
+46m 59s (- 76m 46s) (34400 37%) train_loss: 1.3362, train_mt_loss: 1.3386, train_vse_loss: 1.0927
+47m 6s (- 76m 35s) (34500 38%) train_loss: 1.2512, train_mt_loss: 1.2547, train_vse_loss: 0.9022
+47m 12s (- 76m 25s) (34600 38%) train_loss: 1.2451, train_mt_loss: 1.2479, train_vse_loss: 0.9764
+47m 19s (- 76m 15s) (34700 38%) train_loss: 1.2211, train_mt_loss: 1.2245, train_vse_loss: 0.8908
+47m 26s (- 76m 5s) (34800 38%) train_loss: 1.3286, train_mt_loss: 1.3320, train_vse_loss: 0.9841
+47m 34s (- 75m 55s) (34900 38%) train_loss: 1.3880, train_mt_loss: 1.3921, train_vse_loss: 0.9828
+47m 42s (- 75m 46s) (35000 38%) train_loss: 1.4835, train_mt_loss: 1.4894, train_vse_loss: 0.8966
+dev_loss: 2.5275664925575256, dev_mt_loss: 2.5475994667836597, dev_vse_loss: 0.5443000687020165, dev_bleu: 0.3839114824388952, dev_meteor: 0.5717246395158102
+Image Retrieval Accuracy is:
+r1: 66.17357001972387, r5: 92.11045364891518, r10: 96.5483234714004
+An example demo:
+src: a man and woman playing a game outside .
+ref: ein mann und eine frau spielen ein spiel im freien .
+pred: ein mann und eine frau spielen im freien ein spiel .
+Current Early_Stop Counting: 8
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.404209461019048
+Best METEOR so far is: 0.5789750830768291
+47m 59s (- 75m 52s) (35100 38%) train_loss: 1.2524, train_mt_loss: 1.2554, train_vse_loss: 0.9610
+48m 6s (- 75m 43s) (35200 38%) train_loss: 1.2675, train_mt_loss: 1.2698, train_vse_loss: 1.0419
+48m 14s (- 75m 34s) (35300 38%) train_loss: 1.3190, train_mt_loss: 1.3218, train_vse_loss: 1.0462
+48m 21s (- 75m 24s) (35400 39%) train_loss: 1.2850, train_mt_loss: 1.2884, train_vse_loss: 0.9453
+48m 29s (- 75m 15s) (35500 39%) train_loss: 1.3049, train_mt_loss: 1.3094, train_vse_loss: 0.8581
+48m 36s (- 75m 6s) (35600 39%) train_loss: 1.0520, train_mt_loss: 1.0525, train_vse_loss: 0.9997
+48m 44s (- 74m 57s) (35700 39%) train_loss: 1.3563, train_mt_loss: 1.3612, train_vse_loss: 0.8774
+48m 51s (- 74m 47s) (35800 39%) train_loss: 1.2348, train_mt_loss: 1.2373, train_vse_loss: 0.9814
+48m 58s (- 74m 36s) (35900 39%) train_loss: 1.3229, train_mt_loss: 1.3266, train_vse_loss: 0.9566
+49m 4s (- 74m 26s) (36000 39%) train_loss: 1.1811, train_mt_loss: 1.1825, train_vse_loss: 1.0422
+dev_loss: 2.5996976026466916, dev_mt_loss: 2.620655460017068, dev_vse_loss: 0.5248647076742989, dev_bleu: 0.3988376943141794, dev_meteor: 0.5757896877064614
+Image Retrieval Accuracy is:
+r1: 65.08875739644971, r5: 92.11045364891518, r10: 96.74556213017752
+An example demo:
+src: a woman and two boys looking at an information station .
+ref: eine frau und zwei jungen blicken auf einen informationsstand .
+pred: eine frau und zwei jungen schauen auf eine rockstation .
+Current Early_Stop Counting: 7
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.404209461019048
+Best METEOR so far is: 0.5789750830768291
+49m 21s (- 74m 30s) (36100 39%) train_loss: 1.5527, train_mt_loss: 1.5584, train_vse_loss: 0.9926
+49m 27s (- 74m 19s) (36200 39%) train_loss: 1.1953, train_mt_loss: 1.1973, train_vse_loss: 0.9969
+49m 34s (- 74m 9s) (36300 40%) train_loss: 1.3149, train_mt_loss: 1.3171, train_vse_loss: 1.0953
+49m 41s (- 74m 0s) (36400 40%) train_loss: 1.2354, train_mt_loss: 1.2396, train_vse_loss: 0.8197
+49m 48s (- 73m 50s) (36500 40%) train_loss: 1.1166, train_mt_loss: 1.1191, train_vse_loss: 0.8725
+49m 56s (- 73m 40s) (36600 40%) train_loss: 1.5198, train_mt_loss: 1.5251, train_vse_loss: 0.9995
+50m 3s (- 73m 30s) (36700 40%) train_loss: 1.3358, train_mt_loss: 1.3392, train_vse_loss: 0.9974
+50m 10s (- 73m 20s) (36800 40%) train_loss: 1.2035, train_mt_loss: 1.2061, train_vse_loss: 0.9388
+50m 16s (- 73m 10s) (36900 40%) train_loss: 1.3276, train_mt_loss: 1.3303, train_vse_loss: 1.0596
+50m 24s (- 73m 1s) (37000 40%) train_loss: 1.2448, train_mt_loss: 1.2473, train_vse_loss: 1.0001
+dev_loss: 2.893599199397223, dev_mt_loss: 2.9165642857551575, dev_vse_loss: 0.6200529517871993, dev_bleu: 0.3977321442181386, dev_meteor: 0.5755700408722341
+Image Retrieval Accuracy is:
+r1: 66.37080867850099, r5: 92.20907297830375, r10: 96.5483234714004
+An example demo:
+src: a man stands on scaffolding painting a wall in a coral color .
+ref: ein mann steht auf einem gerüst und streicht eine wand korallenfarbig .
+pred: ein mann steht auf einem gerüst und streicht eine wand hoch .
+Current Early_Stop Counting: 6
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.404209461019048
+Best METEOR so far is: 0.5789750830768291
+50m 39s (- 73m 3s) (37100 40%) train_loss: 1.2326, train_mt_loss: 1.2364, train_vse_loss: 0.8506
+50m 47s (- 72m 54s) (37200 41%) train_loss: 1.1483, train_mt_loss: 1.1529, train_vse_loss: 0.6896
+50m 54s (- 72m 44s) (37300 41%) train_loss: 1.0757, train_mt_loss: 1.0808, train_vse_loss: 0.5715
+51m 2s (- 72m 35s) (37400 41%) train_loss: 1.1607, train_mt_loss: 1.1663, train_vse_loss: 0.6127
+51m 9s (- 72m 26s) (37500 41%) train_loss: 1.0153, train_mt_loss: 1.0189, train_vse_loss: 0.6558
+51m 16s (- 72m 16s) (37600 41%) train_loss: 0.8110, train_mt_loss: 0.8134, train_vse_loss: 0.5733
+51m 24s (- 72m 7s) (37700 41%) train_loss: 1.0334, train_mt_loss: 1.0377, train_vse_loss: 0.6147
+51m 31s (- 71m 58s) (37800 41%) train_loss: 1.2129, train_mt_loss: 1.2195, train_vse_loss: 0.5611
+51m 38s (- 71m 49s) (37900 41%) train_loss: 1.2488, train_mt_loss: 1.2551, train_vse_loss: 0.6241
+51m 46s (- 71m 39s) (38000 41%) train_loss: 1.0783, train_mt_loss: 1.0838, train_vse_loss: 0.5285
+dev_loss: 2.789822227188519, dev_mt_loss: 2.813682018646172, dev_vse_loss: 0.4277015972350325, dev_bleu: 0.40479000267719567, dev_meteor: 0.580364067225379
+Image Retrieval Accuracy is:
+r1: 72.87968441814596, r5: 94.47731755424063, r10: 97.534516765286
+An example demo:
+src: a person on a snowmobile in mid jump .
+ref: eine person auf einem schneemobil mitten im sprung .
+pred: eine person auf einem schlitten springt in die luft .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.40479000267719567
+Best METEOR so far is: 0.580364067225379
+52m 3s (- 71m 43s) (38100 42%) train_loss: 1.2079, train_mt_loss: 1.2147, train_vse_loss: 0.5332
+52m 10s (- 71m 34s) (38200 42%) train_loss: 0.8821, train_mt_loss: 0.8858, train_vse_loss: 0.5170
+52m 18s (- 71m 25s) (38300 42%) train_loss: 0.8945, train_mt_loss: 0.8981, train_vse_loss: 0.5348
+52m 25s (- 71m 16s) (38400 42%) train_loss: 0.8948, train_mt_loss: 0.8988, train_vse_loss: 0.5072
+52m 33s (- 71m 6s) (38500 42%) train_loss: 1.0013, train_mt_loss: 1.0056, train_vse_loss: 0.5718
+52m 40s (- 70m 58s) (38600 42%) train_loss: 1.2634, train_mt_loss: 1.2705, train_vse_loss: 0.5585
+52m 48s (- 70m 49s) (38700 42%) train_loss: 0.9884, train_mt_loss: 0.9928, train_vse_loss: 0.5555
+52m 56s (- 70m 40s) (38800 42%) train_loss: 1.0945, train_mt_loss: 1.1005, train_vse_loss: 0.5076
+53m 3s (- 70m 31s) (38900 42%) train_loss: 1.0567, train_mt_loss: 1.0621, train_vse_loss: 0.5203
+53m 11s (- 70m 22s) (39000 43%) train_loss: 1.1602, train_mt_loss: 1.1662, train_vse_loss: 0.5681
+dev_loss: 2.8389522848384723, dev_mt_loss: 2.863450009907995, dev_vse_loss: 0.4136736845331533, dev_bleu: 0.40530143591492085, dev_meteor: 0.5793134550801265
+Image Retrieval Accuracy is:
+r1: 74.7534516765286, r5: 94.2800788954635, r10: 97.534516765286
+An example demo:
+src: two men talk to each other behind an organ while a lone woman stands to their right .
+ref: zwei männer unterhalten sich hinter einer orgel , während rechts eine einzelne frau steht .
+pred: zwei männer unterhalten sich hinter einer orgel , während eine einsame frau neben ihr steht .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.40530143591492085
+Best METEOR so far is: 0.580364067225379
+53m 29s (- 70m 27s) (39100 43%) train_loss: 1.1935, train_mt_loss: 1.2002, train_vse_loss: 0.5335
+53m 37s (- 70m 18s) (39200 43%) train_loss: 0.9073, train_mt_loss: 0.9119, train_vse_loss: 0.4532
+53m 45s (- 70m 10s) (39300 43%) train_loss: 0.9373, train_mt_loss: 0.9417, train_vse_loss: 0.5002
+53m 53s (- 70m 1s) (39400 43%) train_loss: 1.0348, train_mt_loss: 1.0402, train_vse_loss: 0.4985
+54m 1s (- 69m 52s) (39500 43%) train_loss: 1.0931, train_mt_loss: 1.0993, train_vse_loss: 0.4756
+54m 9s (- 69m 44s) (39600 43%) train_loss: 1.0130, train_mt_loss: 1.0183, train_vse_loss: 0.4897
+54m 16s (- 69m 35s) (39700 43%) train_loss: 1.0631, train_mt_loss: 1.0685, train_vse_loss: 0.5307
+54m 24s (- 69m 26s) (39800 43%) train_loss: 1.0422, train_mt_loss: 1.0478, train_vse_loss: 0.4946
+54m 32s (- 69m 18s) (39900 44%) train_loss: 1.0520, train_mt_loss: 1.0575, train_vse_loss: 0.5058
+54m 39s (- 69m 9s) (40000 44%) train_loss: 1.1925, train_mt_loss: 1.1995, train_vse_loss: 0.4975
+dev_loss: 2.85927059315145, dev_mt_loss: 2.8844840952328274, dev_vse_loss: 0.3631305258188929, dev_bleu: 0.40345374971611486, dev_meteor: 0.5773913436237942
+Image Retrieval Accuracy is:
+r1: 74.95069033530572, r5: 94.18145956607495, r10: 98.0276134122288
+An example demo:
+src: a boat with people and their belongings is in the water .
+ref: ein boot mit menschen und ihrem hab und gut befindet sich im wasser .
+pred: ein boot mit leuten und ihren habseligkeiten sind im wasser .
+Current Early_Stop Counting: 9
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.40530143591492085
+Best METEOR so far is: 0.580364067225379
+54m 57s (- 69m 12s) (40100 44%) train_loss: 0.9807, train_mt_loss: 0.9859, train_vse_loss: 0.4656
+55m 5s (- 69m 4s) (40200 44%) train_loss: 1.0858, train_mt_loss: 1.0921, train_vse_loss: 0.4660
+55m 13s (- 68m 55s) (40300 44%) train_loss: 1.0276, train_mt_loss: 1.0334, train_vse_loss: 0.4570
+55m 21s (- 68m 47s) (40400 44%) train_loss: 1.1074, train_mt_loss: 1.1136, train_vse_loss: 0.4881
+55m 29s (- 68m 38s) (40500 44%) train_loss: 0.8626, train_mt_loss: 0.8664, train_vse_loss: 0.4944
+55m 37s (- 68m 30s) (40600 44%) train_loss: 0.8680, train_mt_loss: 0.8717, train_vse_loss: 0.5017
+55m 45s (- 68m 22s) (40700 44%) train_loss: 0.9716, train_mt_loss: 0.9762, train_vse_loss: 0.5162
+55m 54s (- 68m 13s) (40800 45%) train_loss: 1.0545, train_mt_loss: 1.0603, train_vse_loss: 0.4794
+56m 1s (- 68m 5s) (40900 45%) train_loss: 0.8219, train_mt_loss: 0.8255, train_vse_loss: 0.4678
+56m 9s (- 67m 56s) (41000 45%) train_loss: 1.0521, train_mt_loss: 1.0584, train_vse_loss: 0.4354
+dev_loss: 2.359088587973799, dev_mt_loss: 2.378898489688124, dev_vse_loss: 0.3979075311550072, dev_bleu: 0.4072734023593675, dev_meteor: 0.5805528322085509
+Image Retrieval Accuracy is:
+r1: 75.83826429980276, r5: 94.87179487179488, r10: 98.22485207100591
+An example demo:
+src: several men are praying while standing at the end of a table of food .
+ref: mehrere männer beten , während sie am ende eines tisches mit essen stehen .
+pred: mehrere männer beten , während sie am ende eines tisch im essen steht .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.4072734023593675
+Best METEOR so far is: 0.5805528322085509
+56m 27s (- 68m 0s) (41100 45%) train_loss: 0.9181, train_mt_loss: 0.9227, train_vse_loss: 0.4547
+56m 35s (- 67m 51s) (41200 45%) train_loss: 1.1113, train_mt_loss: 1.1179, train_vse_loss: 0.4585
+56m 44s (- 67m 43s) (41300 45%) train_loss: 1.0099, train_mt_loss: 1.0149, train_vse_loss: 0.5135
+56m 52s (- 67m 35s) (41400 45%) train_loss: 1.3225, train_mt_loss: 1.3314, train_vse_loss: 0.4406
+57m 0s (- 67m 26s) (41500 45%) train_loss: 0.9910, train_mt_loss: 0.9968, train_vse_loss: 0.4149
+57m 6s (- 67m 15s) (41600 45%) train_loss: 0.9646, train_mt_loss: 0.9695, train_vse_loss: 0.4716
+57m 12s (- 67m 4s) (41700 46%) train_loss: 0.8308, train_mt_loss: 0.8347, train_vse_loss: 0.4426
+57m 17s (- 66m 53s) (41800 46%) train_loss: 1.0036, train_mt_loss: 1.0091, train_vse_loss: 0.4563
+57m 23s (- 66m 42s) (41900 46%) train_loss: 0.8148, train_mt_loss: 0.8186, train_vse_loss: 0.4358
+57m 29s (- 66m 31s) (42000 46%) train_loss: 0.8713, train_mt_loss: 0.8761, train_vse_loss: 0.3961
+dev_loss: 2.6553246953657696, dev_mt_loss: 2.6784055020127977, dev_vse_loss: 0.37032296721424374, dev_bleu: 0.40065318824300394, dev_meteor: 0.5759575030118753
+Image Retrieval Accuracy is:
+r1: 75.14792899408285, r5: 94.47731755424063, r10: 98.12623274161736
+An example demo:
+src: a man wearing olive drab clothing is holding himself up off the ground with his hands .
+ref: ein braunoliv gekleideter mann hält sich mit seinen händen über dem boden .
+pred: ein mann in der olivgraukleidung hält sich mit den händen vom boden in die höhe .
+Current Early_Stop Counting: 9
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.4072734023593675
+Best METEOR so far is: 0.5805528322085509
+57m 43s (- 66m 29s) (42100 46%) train_loss: 0.8627, train_mt_loss: 0.8669, train_vse_loss: 0.4470
+57m 49s (- 66m 18s) (42200 46%) train_loss: 0.9704, train_mt_loss: 0.9756, train_vse_loss: 0.4562
+57m 56s (- 66m 9s) (42300 46%) train_loss: 0.9270, train_mt_loss: 0.9315, train_vse_loss: 0.4851
+58m 2s (- 65m 59s) (42400 46%) train_loss: 1.1320, train_mt_loss: 1.1393, train_vse_loss: 0.4041
+58m 10s (- 65m 49s) (42500 46%) train_loss: 1.0945, train_mt_loss: 1.1012, train_vse_loss: 0.4279
+58m 17s (- 65m 40s) (42600 47%) train_loss: 0.9437, train_mt_loss: 0.9490, train_vse_loss: 0.4167
+58m 24s (- 65m 31s) (42700 47%) train_loss: 1.1013, train_mt_loss: 1.1084, train_vse_loss: 0.3991
+58m 30s (- 65m 21s) (42800 47%) train_loss: 1.0252, train_mt_loss: 1.0309, train_vse_loss: 0.4601
+58m 37s (- 65m 11s) (42900 47%) train_loss: 1.0176, train_mt_loss: 1.0240, train_vse_loss: 0.3887
+58m 44s (- 65m 1s) (43000 47%) train_loss: 0.8367, train_mt_loss: 0.8412, train_vse_loss: 0.3960
+dev_loss: 2.425704753824643, dev_mt_loss: 2.4468353103314127, dev_vse_loss: 0.3337772392800876, dev_bleu: 0.40423285614413745, dev_meteor: 0.5787434126097492
+Image Retrieval Accuracy is:
+r1: 74.7534516765286, r5: 94.5759368836292, r10: 98.32347140039448
+An example demo:
+src: a group of girls playing a game on horseback .
+ref: eine gruppe von mädchen spielt ein spiel zu pferd .
+pred: eine gruppe von mädchen spielt ein spiel auf dem pferd .
+Current Early_Stop Counting: 8
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.4072734023593675
+Best METEOR so far is: 0.5805528322085509
+58m 59s (- 65m 1s) (43100 47%) train_loss: 0.9811, train_mt_loss: 0.9869, train_vse_loss: 0.4088
+59m 6s (- 64m 51s) (43200 47%) train_loss: 1.0127, train_mt_loss: 1.0184, train_vse_loss: 0.4501
+59m 13s (- 64m 41s) (43300 47%) train_loss: 0.9053, train_mt_loss: 0.9102, train_vse_loss: 0.4206
+59m 20s (- 64m 32s) (43400 47%) train_loss: 0.9182, train_mt_loss: 0.9226, train_vse_loss: 0.4826
+59m 27s (- 64m 22s) (43500 48%) train_loss: 0.8785, train_mt_loss: 0.8830, train_vse_loss: 0.4382
+59m 34s (- 64m 13s) (43600 48%) train_loss: 0.9810, train_mt_loss: 0.9859, train_vse_loss: 0.4978
+59m 41s (- 64m 3s) (43700 48%) train_loss: 1.0338, train_mt_loss: 1.0397, train_vse_loss: 0.4440
+59m 48s (- 63m 54s) (43800 48%) train_loss: 0.8939, train_mt_loss: 0.8991, train_vse_loss: 0.3730
+59m 55s (- 63m 44s) (43900 48%) train_loss: 0.7502, train_mt_loss: 0.7534, train_vse_loss: 0.4305
+60m 2s (- 63m 35s) (44000 48%) train_loss: 1.2043, train_mt_loss: 1.2116, train_vse_loss: 0.4811
+dev_loss: 2.4976786034447804, dev_mt_loss: 2.519259864464402, dev_vse_loss: 0.3611310268087046, dev_bleu: 0.40081179641814346, dev_meteor: 0.5754159449627675
+Image Retrieval Accuracy is:
+r1: 75.34516765285996, r5: 95.56213017751479, r10: 97.92899408284023
+An example demo:
+src: a little girl in a pink tutu practices dancing with scarves .
+ref: ein kleines mädchen in einem rosafarbenen ballettröckchen übt einen tüchertanz .
+pred: ein kleines mädchen in einem rosa tutu übt mit schals .
+Current Early_Stop Counting: 7
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.4072734023593675
+Best METEOR so far is: 0.5805528322085509
+60m 17s (- 63m 34s) (44100 48%) train_loss: 0.9331, train_mt_loss: 0.9377, train_vse_loss: 0.4785
+60m 24s (- 63m 24s) (44200 48%) train_loss: 1.0223, train_mt_loss: 1.0281, train_vse_loss: 0.4489
+60m 30s (- 63m 14s) (44300 48%) train_loss: 0.9773, train_mt_loss: 0.9833, train_vse_loss: 0.3859
+60m 37s (- 63m 5s) (44400 49%) train_loss: 0.8627, train_mt_loss: 0.8671, train_vse_loss: 0.4224
+60m 44s (- 62m 55s) (44500 49%) train_loss: 0.8428, train_mt_loss: 0.8473, train_vse_loss: 0.4021
+60m 51s (- 62m 46s) (44600 49%) train_loss: 0.8964, train_mt_loss: 0.9010, train_vse_loss: 0.4434
+60m 58s (- 62m 37s) (44700 49%) train_loss: 1.0035, train_mt_loss: 1.0095, train_vse_loss: 0.4095
+61m 5s (- 62m 27s) (44800 49%) train_loss: 1.0999, train_mt_loss: 1.1076, train_vse_loss: 0.3356
+61m 12s (- 62m 17s) (44900 49%) train_loss: 0.7298, train_mt_loss: 0.7330, train_vse_loss: 0.4193
+61m 19s (- 62m 8s) (45000 49%) train_loss: 0.9159, train_mt_loss: 0.9210, train_vse_loss: 0.4183
+dev_loss: 2.519735500216484, dev_mt_loss: 2.541533788400037, dev_vse_loss: 0.3617015779018402, dev_bleu: 0.40511806750680207, dev_meteor: 0.580107053926807
+Image Retrieval Accuracy is:
+r1: 75.44378698224853, r5: 94.87179487179488, r10: 97.92899408284023
+An example demo:
+src: the large brown dog is chasing after the little brown dog .
+ref: der große braune hund jagt dem kleinen braunen hund hinterher .
+pred: der große brauner hund jagt dem kleinen braunen hund hinterher .
+Current Early_Stop Counting: 6
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.4072734023593675
+Best METEOR so far is: 0.5805528322085509
+61m 34s (- 62m 7s) (45100 49%) train_loss: 0.9053, train_mt_loss: 0.9099, train_vse_loss: 0.4516
+61m 41s (- 61m 58s) (45200 49%) train_loss: 0.8824, train_mt_loss: 0.8868, train_vse_loss: 0.4411
+61m 48s (- 61m 48s) (45300 50%) train_loss: 0.9235, train_mt_loss: 0.9286, train_vse_loss: 0.4226
+61m 55s (- 61m 39s) (45400 50%) train_loss: 0.9123, train_mt_loss: 0.9174, train_vse_loss: 0.4156
+62m 1s (- 61m 28s) (45500 50%) train_loss: 1.1270, train_mt_loss: 1.1342, train_vse_loss: 0.4133
+62m 7s (- 61m 18s) (45600 50%) train_loss: 1.0754, train_mt_loss: 1.0825, train_vse_loss: 0.3782
+62m 13s (- 61m 7s) (45700 50%) train_loss: 0.9441, train_mt_loss: 0.9501, train_vse_loss: 0.3523
+62m 18s (- 60m 57s) (45800 50%) train_loss: 0.7542, train_mt_loss: 0.7581, train_vse_loss: 0.3674
+62m 24s (- 60m 46s) (45900 50%) train_loss: 0.9361, train_mt_loss: 0.9415, train_vse_loss: 0.4046
+62m 30s (- 60m 36s) (46000 50%) train_loss: 0.9974, train_mt_loss: 1.0036, train_vse_loss: 0.3818
+dev_loss: 2.6419365406036377, dev_mt_loss: 2.664843961596489, dev_vse_loss: 0.37410205602645874, dev_bleu: 0.3982033358848912, dev_meteor: 0.575685938605397
+Image Retrieval Accuracy is:
+r1: 75.14792899408285, r5: 95.16765285996055, r10: 98.12623274161736
+An example demo:
+src: two people play water volleyball in a pool .
+ref: zwei menschen spielen wasservolleyball in einem pool .
+pred: zwei personen spielen in einem schwimmbecken wasservolleyball .
+Current Early_Stop Counting: 5
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.4072734023593675
+Best METEOR so far is: 0.5805528322085509
+62m 45s (- 60m 34s) (46100 50%) train_loss: 0.9620, train_mt_loss: 0.9675, train_vse_loss: 0.4132
+62m 50s (- 60m 24s) (46200 50%) train_loss: 0.8380, train_mt_loss: 0.8418, train_vse_loss: 0.4601
+62m 56s (- 60m 13s) (46300 51%) train_loss: 1.1160, train_mt_loss: 1.1229, train_vse_loss: 0.4394
+63m 2s (- 60m 3s) (46400 51%) train_loss: 0.8812, train_mt_loss: 0.8857, train_vse_loss: 0.4355
+63m 8s (- 59m 52s) (46500 51%) train_loss: 0.7926, train_mt_loss: 0.7963, train_vse_loss: 0.4232
+63m 14s (- 59m 42s) (46600 51%) train_loss: 0.9634, train_mt_loss: 0.9693, train_vse_loss: 0.3732
+63m 19s (- 59m 32s) (46700 51%) train_loss: 0.8015, train_mt_loss: 0.8053, train_vse_loss: 0.4185
+63m 25s (- 59m 21s) (46800 51%) train_loss: 0.7464, train_mt_loss: 0.7504, train_vse_loss: 0.3509
+63m 31s (- 59m 11s) (46900 51%) train_loss: 1.0728, train_mt_loss: 1.0796, train_vse_loss: 0.3940
+63m 37s (- 59m 1s) (47000 51%) train_loss: 0.8883, train_mt_loss: 0.8929, train_vse_loss: 0.4302
+dev_loss: 2.9253032132983208, dev_mt_loss: 2.9508260068084513, dev_vse_loss: 0.3985444089131696, dev_bleu: 0.4031435993906364, dev_meteor: 0.5778193710448712
+Image Retrieval Accuracy is:
+r1: 75.2465483234714, r5: 95.26627218934911, r10: 97.73175542406311
+An example demo:
+src: kids being spun around in a glass spinner .
+ref: kinder werden in einem glaskreisel herumgewirbelt .
+pred: kinder werden in einem glasdrehteil , in .
+Current Early_Stop Counting: 4
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.4072734023593675
+Best METEOR so far is: 0.5805528322085509
+63m 51s (- 58m 58s) (47100 51%) train_loss: 1.0453, train_mt_loss: 1.0518, train_vse_loss: 0.3988
+63m 57s (- 58m 48s) (47200 52%) train_loss: 0.7259, train_mt_loss: 0.7289, train_vse_loss: 0.4258
+64m 3s (- 58m 38s) (47300 52%) train_loss: 0.9355, train_mt_loss: 0.9407, train_vse_loss: 0.4229
+64m 9s (- 58m 28s) (47400 52%) train_loss: 1.1181, train_mt_loss: 1.1253, train_vse_loss: 0.4001
+64m 15s (- 58m 18s) (47500 52%) train_loss: 1.0074, train_mt_loss: 1.0134, train_vse_loss: 0.4147
+64m 21s (- 58m 8s) (47600 52%) train_loss: 0.9741, train_mt_loss: 0.9799, train_vse_loss: 0.3940
+64m 27s (- 57m 58s) (47700 52%) train_loss: 0.9222, train_mt_loss: 0.9279, train_vse_loss: 0.3659
+64m 33s (- 57m 47s) (47800 52%) train_loss: 0.9648, train_mt_loss: 0.9709, train_vse_loss: 0.3616
+64m 38s (- 57m 37s) (47900 52%) train_loss: 0.8890, train_mt_loss: 0.8939, train_vse_loss: 0.3973
+64m 44s (- 57m 27s) (48000 52%) train_loss: 0.8841, train_mt_loss: 0.8888, train_vse_loss: 0.4278
+dev_loss: 2.6570603320641175, dev_mt_loss: 2.679919027856418, dev_vse_loss: 0.39404735288449694, dev_bleu: 0.3984694970787833, dev_meteor: 0.572312008112848
+Image Retrieval Accuracy is:
+r1: 75.04930966469428, r5: 95.06903353057199, r10: 98.12623274161736
+An example demo:
+src: a young woman practices a string instrument indoors .
+ref: eine junge frau spielt ein saiteninstrument im haus .
+pred: eine junge frau übt drinnen an einem saiteninstrument .
+Current Early_Stop Counting: 3
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.4072734023593675
+Best METEOR so far is: 0.5805528322085509
+64m 59s (- 57m 25s) (48100 53%) train_loss: 0.9758, train_mt_loss: 0.9811, train_vse_loss: 0.4548
+65m 6s (- 57m 16s) (48200 53%) train_loss: 1.0847, train_mt_loss: 1.0919, train_vse_loss: 0.3711
+65m 13s (- 57m 7s) (48300 53%) train_loss: 1.1210, train_mt_loss: 1.1286, train_vse_loss: 0.3730
+65m 20s (- 56m 58s) (48400 53%) train_loss: 0.7682, train_mt_loss: 0.7718, train_vse_loss: 0.4142
+65m 27s (- 56m 48s) (48500 53%) train_loss: 0.9237, train_mt_loss: 0.9297, train_vse_loss: 0.3274
+65m 34s (- 56m 40s) (48600 53%) train_loss: 0.7097, train_mt_loss: 0.7129, train_vse_loss: 0.3948
+65m 41s (- 56m 30s) (48700 53%) train_loss: 0.8054, train_mt_loss: 0.8100, train_vse_loss: 0.3568
+65m 48s (- 56m 21s) (48800 53%) train_loss: 1.0253, train_mt_loss: 1.0322, train_vse_loss: 0.3498
+65m 55s (- 56m 12s) (48900 53%) train_loss: 0.8518, train_mt_loss: 0.8571, train_vse_loss: 0.3313
+66m 2s (- 56m 3s) (49000 54%) train_loss: 1.0302, train_mt_loss: 1.0373, train_vse_loss: 0.3286
+dev_loss: 2.853137876306261, dev_mt_loss: 2.878115757235459, dev_vse_loss: 0.38032484373876024, dev_bleu: 0.40057878720479645, dev_meteor: 0.5757656313402144
+Image Retrieval Accuracy is:
+r1: 75.44378698224853, r5: 95.46351084812623, r10: 98.42209072978304
+An example demo:
+src: three men stand around a cart near some motorcycles .
+ref: drei männer stehen in der nähe einiger motorräder um einen wagen .
+pred: drei männer stehen um einen wagen in der nähe von einigen motorrädern .
+Current Early_Stop Counting: 2
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.4072734023593675
+Best METEOR so far is: 0.5805528322085509
+66m 17s (- 56m 1s) (49100 54%) train_loss: 1.0069, train_mt_loss: 1.0132, train_vse_loss: 0.3760
+66m 24s (- 55m 52s) (49200 54%) train_loss: 0.8651, train_mt_loss: 0.8701, train_vse_loss: 0.3655
+66m 31s (- 55m 43s) (49300 54%) train_loss: 1.0152, train_mt_loss: 1.0218, train_vse_loss: 0.3646
+66m 38s (- 55m 34s) (49400 54%) train_loss: 0.8772, train_mt_loss: 0.8830, train_vse_loss: 0.3018
+66m 45s (- 55m 25s) (49500 54%) train_loss: 0.9300, train_mt_loss: 0.9362, train_vse_loss: 0.3162
+66m 52s (- 55m 16s) (49600 54%) train_loss: 0.9309, train_mt_loss: 0.9365, train_vse_loss: 0.3804
+66m 59s (- 55m 7s) (49700 54%) train_loss: 0.8366, train_mt_loss: 0.8418, train_vse_loss: 0.3210
+67m 6s (- 54m 58s) (49800 54%) train_loss: 0.7485, train_mt_loss: 0.7527, train_vse_loss: 0.3299
+67m 13s (- 54m 49s) (49900 55%) train_loss: 0.9974, train_mt_loss: 1.0039, train_vse_loss: 0.3472
+67m 19s (- 54m 40s) (50000 55%) train_loss: 0.8026, train_mt_loss: 0.8068, train_vse_loss: 0.3872
+dev_loss: 2.5234233513474464, dev_mt_loss: 2.5457920527883937, dev_vse_loss: 0.30892024987510275, dev_bleu: 0.4012262096037706, dev_meteor: 0.5761883073395695
+Image Retrieval Accuracy is:
+r1: 76.03550295857988, r5: 95.46351084812623, r10: 98.42209072978304
+An example demo:
+src: a biker doing a jump in a forest .
+ref: ein radfahrer vollführt einen sprung in einem wald .
+pred: ein radfahrer macht einen sprung in einem wald .
+Current Early_Stop Counting: 1
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.4072734023593675
+Best METEOR so far is: 0.5805528322085509
+67m 36s (- 54m 39s) (50100 55%) train_loss: 0.8789, train_mt_loss: 0.8844, train_vse_loss: 0.3403
+67m 43s (- 54m 30s) (50200 55%) train_loss: 0.9931, train_mt_loss: 0.9995, train_vse_loss: 0.3519
+67m 50s (- 54m 21s) (50300 55%) train_loss: 0.7837, train_mt_loss: 0.7883, train_vse_loss: 0.3293
+67m 57s (- 54m 12s) (50400 55%) train_loss: 0.7902, train_mt_loss: 0.7952, train_vse_loss: 0.3025
+68m 4s (- 54m 3s) (50500 55%) train_loss: 1.0307, train_mt_loss: 1.0377, train_vse_loss: 0.3390
+68m 10s (- 53m 53s) (50600 55%) train_loss: 0.7514, train_mt_loss: 0.7557, train_vse_loss: 0.3269
+68m 17s (- 53m 44s) (50700 55%) train_loss: 0.8743, train_mt_loss: 0.8795, train_vse_loss: 0.3618
+68m 24s (- 53m 35s) (50800 56%) train_loss: 0.8212, train_mt_loss: 0.8258, train_vse_loss: 0.3577
+68m 31s (- 53m 26s) (50900 56%) train_loss: 0.8914, train_mt_loss: 0.8969, train_vse_loss: 0.3545
+68m 38s (- 53m 17s) (51000 56%) train_loss: 0.9313, train_mt_loss: 0.9372, train_vse_loss: 0.3487
+dev_loss: 2.791551308972495, dev_mt_loss: 2.8162165518317903, dev_vse_loss: 0.349689068538802, dev_bleu: 0.4053230015856744, dev_meteor: 0.57906477911176
+Image Retrieval Accuracy is:
+r1: 76.92307692307692, r5: 95.85798816568047, r10: 98.12623274161736
+An example demo:
+src: a drummer and guitar player play a show in a dark area .
+ref: ein schlagzeuger und ein gitarrist treten in einem dunklen bereich auf .
+pred: ein schlagzeuger und ein gitarrespieler spielen in einer dunklen gegend eine show .
+Current Early_Stop Counting: 0
+Best Loss so far is: 2.324632949062756
+Best BLEU so far is: 0.4072734023593675
+Best METEOR so far is: 0.5805528322085509
+Training is done.
+Evalute the Test Result
+Image Retrieval Accuracy with best_BLEU model is:
+r1: 59.9, r5: 87.2, r10: 93.1
+Test BLEU score from the best BLEU model: 0.3156321668098113
+Test METEOR score from the best BLEU model: 0.5215313737631495
+
+
+Image Retrieval Accuracy with best_loss model is:
+r1: 49.7, r5: 80.0, r10: 88.9
+Test BLEU score from the best LOSS model: 0.3125071718114073
+Test METEOR score from the best LOSS model: 0.5200889548226774
+
+
+Image Retrieval Accuracy with best_METEOR model is:
+r1: 59.9, r5: 87.2, r10: 93.1
+Test BLEU score from the best METEOR model: 0.3156321668098113
+Test METEOR score from the best METEOR model: 0.5215313737631495
