@@ -1,1 +1,0 @@
-  - [Multimodal Machine Translation --- Papers With Code](https://paperswithcode.com/task/multimodal-machine-translation)
