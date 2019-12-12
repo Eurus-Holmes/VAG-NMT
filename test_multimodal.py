@@ -28,12 +28,12 @@ beam_size = 12
 # model_path = "/path/to/model" #The full path to the trained model that you want to test on
 # output_path = "/path/to/save/prediction" #Directory to save the translation results from a trained model
 
-data_path = '/home/zmykevin/Kevin/Research/machine_translation_vision/data/Multi30K_DE_BPE_Kevin' #Define the Directory of the Test Data Path
+data_path = './path/to/data' #Define the Directory of the Test Data Path
 source_language = 'en'
 target_language = 'de'
-vocab_path = '/home/zmykevin/Kevin/Research/machine_translation_vision/data/Multi30K_DE_BPE_Kevin' #Define the Directory of the vocabulary file
-model_path = "/home/zmykevin/Kevin/Research/machine_translation_vision/trained_model/WMT17/test/nmt_trained_imagine_model_best_BLEU.pt" #The full path to the trained model that you want to test on
-output_path = "/home/zmykevin/Kevin/Research/machine_translation_vision/trained_model/WMT17/test" #Directory to save the translation results from a trained model
+vocab_path = './path/to/data' #Define the Directory of the vocabulary file
+model_path = "./path/to/save/model/nmt_trained_imagine_model_best_BLEU.pt" #The full path to the trained model that you want to test on
+output_path = "./results" #Directory to save the translation results from a trained model
 ################################################################
 
 BPE_dataset_suffix = '.norm.tok.lc.10000bpe'
