@@ -56,7 +56,8 @@ nohup python nmt_multimodal_beam_FR.py --data_path ./path/to/data --trained_mode
 Output: [nohup.out](https://github.com/Eurus-Holmes/VAG-NMT/blob/master/nohup.out)
 
 
-#### En-DE
+#### EN - DE
+
 ```
 Text-only 
 
@@ -90,6 +91,36 @@ Test METEOR score from the best LOSS model: 0.5200889548226774
 
 Test BLEU score from the best METEOR model: 0.3156321668098113
 Test METEOR score from the best METEOR model: 0.5215313737631495
+
+```
+
+#### EN - FR
+
+```
+
+Multimodal
+
+Best Loss so far is: 1.6698784612343405
+Best BLEU so far is: 0.5998847835940756
+Best METEOR so far is: 0.7461764017685929
+Training is done.
+Evalute the Test Result
+Image Retrieval Accuracy with best_BLEU model is:
+r1: 55.9, r5: 84.1, r10: 91.1
+Test BLEU score from the best BLEU model: 0.534873102483558
+Test METEOR score from the best BLEU model: 0.6991643193268113
+
+
+Image Retrieval Accuracy with best_loss model is:
+r1: 55.6, r5: 84.0, r10: 91.3
+Test BLEU score from the best LOSS model: 0.5396332503333836
+Test METEOR score from the best LOSS model: 0.7040998194205892
+
+
+Image Retrieval Accuracy with best_METEOR model is:
+r1: 51.8, r5: 82.1, r10: 89.1
+Test BLEU score from the best METEOR model: 0.537732442365955
+Test METEOR score from the best METEOR model: 0.7018801881087674
 
 ```
 
