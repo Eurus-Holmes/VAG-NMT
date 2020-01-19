@@ -111,6 +111,23 @@ Test METEOR score from the best METEOR model: 0.5215313737631495
 #### EN - FR
 
 ```
+Text-only
+
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5838748867938931
+Best METEOR so far is: 0.7370777910681489
+Training is done.
+Evalute the Test Result
+Test BLEU score from the best BLEU model: 0.522145174724175
+Test METEOR score from the best BLEU model: 0.690008484180175
+
+
+Test BLEU score from the best LOSS model: 0.4904040284370619
+Test METEOR score from the best LOSS model: 0.673515640075243
+
+
+Test BLEU score from the best METEOR model: 0.522145174724175
+Test METEOR score from the best METEOR model: 0.690008484180175
 
 Multimodal
 
