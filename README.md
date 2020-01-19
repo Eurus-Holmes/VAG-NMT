@@ -48,6 +48,10 @@ To test a trained model on a test dataset, you can run `test_multimodal.py` and 
 ### Results
 
 ```bash
+nohup python nmt_monomodal_beam_DE.py --data_path ./path/to/data --trained_model_path ./path/to/save/model --sr en --tg de &
+
+nohup python nmt_monomodal_beam_FR.py --data_path ./path/to/data --trained_model_path ./path/to/save/model --sr en --tg fr &
+
 nohup python nmt_multimodal_beam_DE.py --data_path ./path/to/data --trained_model_path ./path/to/save/model --sr en --tg de &
 
 nohup python nmt_multimodal_beam_FR.py --data_path ./path/to/data --trained_model_path ./path/to/save/model --sr en --tg fr &
