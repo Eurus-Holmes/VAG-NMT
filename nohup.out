@@ -2507,3 +2507,580 @@ Image Retrieval Accuracy with best_METEOR model is:
 r1: 51.8, r5: 82.1, r10: 89.1
 Test BLEU score from the best METEOR model: 0.537732442365955
 Test METEOR score from the best METEOR model: 0.7018801881087674
+/usr/local/lib/python3.6/site-packages/torch/nn/functional.py:52: UserWarning: size_average and reduce args will be deprecated, please use reduction='none' instead.
+  warnings.warn(warning.format(ret))
+/usr/local/lib/python3.6/site-packages/torch/nn/functional.py:995: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+nmt_monomodal_beam_FR.py:345: UserWarning: invalid index of a 0-dim tensor. This will be an error in PyTorch 0.5. Use tensor.item() to convert a 0-dim tensor to a Python number
+  val_losses += val_loss.data[0]
+/dfsdata2/chenfy7_data/A-Visual-Attention-Grounding-Neural-Model-master/machine_translation_vision/models/NMT_Seq2Seq_Beam_V2.py:212: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  decoder_input = Variable(cur_tokens,volatile=True)
+Whether GPU is available: True
+The size of Training Source and Training Target is: 29000,29000
+The size of Validation Source and Validation Target is: 1014,1014
+The size of Test Source and Test Target is: 1000,1000
+The size of Training Data after filtering: 29000
+The size of Val Data after filtering: 1014
+The size of Test Data after filtering: 1000
+The vocabulary size for soruce language: 8506
+The vocabulary size for target language: 8747
+Move Models to GPU
+Configurations:
+
+
+######## Network Structure #########
+embedding_size: 256
+hidden_size: 512
+n_layers: 1
+tied_emb: True
+
+
+####### Dropout #######
+dropout_rnn: 0.0
+dropout_emb: 0.2
+dropout_ctx: 0.4
+dropout_out: 0.0
+
+
+####### Training Setting #######
+batch_size: 32
+eval_batch_size: 16
+learning_rate: 0.001
+weight_decay: 1e-05
+beam_size: 12
+n_epochs: 100
+print_every: 100
+eval_every: 1000
+save_every: 10000
+teacher_force_ratio: 0.8
+clip: 1.0
+input_size: 8507
+output_size: 8748
+
+
+Begin Training
+0m 7s (- 115m 53s) (100 0%) 5.4334
+0m 14s (- 109m 11s) (200 0%) 4.0550
+0m 21s (- 109m 31s) (300 0%) 3.6781
+0m 28s (- 108m 52s) (400 0%) 3.0978
+0m 36s (- 108m 9s) (500 0%) 2.9609
+0m 43s (- 108m 58s) (600 0%) 2.7001
+0m 50s (- 108m 4s) (700 0%) 2.6095
+0m 58s (- 109m 52s) (800 0%) 2.4532
+1m 5s (- 108m 13s) (900 0%) 2.3015
+1m 11s (- 106m 8s) (1000 1%) 2.1822
+dev_loss: 2.4510231018066406, dev_bleu: 0.43152818581505037,dev_meteor: 0.6077928277921572
+An example demo:
+src: two men sit around a shiny grill .
+ref: deux hommes sont assis autour d&apos; un gril brillant .
+pred: deux hommes sont assis autour d&apos; un gril .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.4510231018066406
+Best BLEU so far is: 0.43152818581505037
+Best METEOR so far is: 0.6077928277921572
+1m 29s (- 121m 13s) (1100 1%) 2.0312
+1m 36s (- 119m 34s) (1200 1%) 2.0587
+1m 43s (- 118m 8s) (1300 1%) 1.9228
+1m 50s (- 117m 5s) (1400 1%) 2.0046
+1m 57s (- 116m 40s) (1500 1%) 2.0716
+2m 5s (- 116m 27s) (1600 1%) 1.7905
+2m 12s (- 115m 46s) (1700 1%) 1.9286
+2m 18s (- 114m 14s) (1800 1%) 1.9157
+2m 24s (- 112m 34s) (1900 2%) 1.6469
+2m 30s (- 111m 6s) (2000 2%) 1.5097
+dev_loss: 2.0206804275512695, dev_bleu: 0.5063096841850975,dev_meteor: 0.6711794989806126
+An example demo:
+src: sailors stand at the top of a gangplank to a large boat .
+ref: des marins sont debout en haut d&apos; une passerelle sur un grand bateau .
+pred: des policiers sont debout au sommet d&apos; une planche à roulettes à un grand bateau .
+Current Early_Stop Counting: 10
+Best Loss so far is: 2.0206804275512695
+Best BLEU so far is: 0.5063096841850975
+Best METEOR so far is: 0.6711794989806126
+2m 46s (- 117m 6s) (2100 2%) 1.3957
+2m 54s (- 116m 50s) (2200 2%) 1.6766
+3m 1s (- 116m 25s) (2300 2%) 1.4670
+3m 9s (- 116m 14s) (2400 2%) 1.4741
+3m 17s (- 115m 44s) (2500 2%) 1.4930
+3m 24s (- 115m 22s) (2600 2%) 1.4793
+3m 31s (- 114m 59s) (2700 2%) 1.5901
+3m 39s (- 114m 34s) (2800 3%) 1.6353
+3m 47s (- 114m 33s) (2900 3%) 1.3175
+3m 55s (- 114m 29s) (3000 3%) 1.3356
+dev_loss: 1.7958168983459473, dev_bleu: 0.5358594493550198,dev_meteor: 0.6995223532987754
+An example demo:
+src: the women is holding the boy while looking across the street .
+ref: la femme tient le garçon tout en regardant de l&apos; autre côté de la rue .
+pred: la femme tient le garçon tout en regardant dans la rue .
+Current Early_Stop Counting: 10
+Best Loss so far is: 1.7958168983459473
+Best BLEU so far is: 0.5358594493550198
+Best METEOR so far is: 0.6995223532987754
+4m 13s (- 119m 13s) (3100 3%) 1.3525
+4m 21s (- 119m 2s) (3200 3%) 1.3554
+4m 28s (- 118m 34s) (3300 3%) 1.3683
+4m 36s (- 118m 19s) (3400 3%) 1.3653
+4m 45s (- 118m 19s) (3500 3%) 1.3256
+4m 53s (- 118m 7s) (3600 3%) 1.3155
+5m 1s (- 118m 8s) (3700 4%) 1.4988
+5m 9s (- 117m 52s) (3800 4%) 1.1757
+5m 17s (- 117m 42s) (3900 4%) 1.1212
+5m 25s (- 117m 35s) (4000 4%) 1.1129
+dev_loss: 1.8894531726837158, dev_bleu: 0.538405260379251,dev_meteor: 0.6986044713313188
+An example demo:
+src: a racing catamaran is lifted onto one hull in the water .
+ref: un catamaran de course est soulevé sur une seule coque dans l&apos; eau .
+pred: un catamaran de course est soulevé sur un modèle s&apos; ébroue dans l&apos; eau .
+Current Early_Stop Counting: 10
+Best Loss so far is: 1.7958168983459473
+Best BLEU so far is: 0.538405260379251
+Best METEOR so far is: 0.6995223532987754
+5m 44s (- 121m 17s) (4100 4%) 1.1748
+5m 53s (- 121m 5s) (4200 4%) 1.2151
+6m 0s (- 120m 38s) (4300 4%) 1.1205
+6m 9s (- 120m 33s) (4400 4%) 1.3727
+6m 17s (- 120m 15s) (4500 4%) 1.2673
+6m 25s (- 120m 1s) (4600 5%) 1.2198
+6m 33s (- 119m 57s) (4700 5%) 1.1911
+6m 41s (- 119m 42s) (4800 5%) 1.0167
+6m 49s (- 119m 27s) (4900 5%) 1.1739
+6m 58s (- 119m 21s) (5000 5%) 1.2280
+dev_loss: 1.5623949766159058, dev_bleu: 0.5527158979128004,dev_meteor: 0.7156335837589898
+An example demo:
+src: a group of men in costume play music .
+ref: un groupe d&apos; hommes en costume jouent de la musique .
+pred: un groupe d&apos; hommes en costumes jouent de la musique .
+Current Early_Stop Counting: 10
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5527158979128004
+Best METEOR so far is: 0.7156335837589898
+7m 18s (- 122m 24s) (5100 5%) 1.0145
+7m 25s (- 122m 3s) (5200 5%) 1.0143
+7m 33s (- 121m 39s) (5300 5%) 0.9977
+7m 41s (- 121m 14s) (5400 5%) 1.1028
+7m 49s (- 121m 0s) (5500 6%) 1.0890
+7m 57s (- 120m 44s) (5600 6%) 1.0671
+8m 4s (- 120m 22s) (5700 6%) 0.9733
+8m 12s (- 120m 6s) (5800 6%) 0.9824
+8m 20s (- 119m 42s) (5900 6%) 0.8924
+8m 28s (- 119m 26s) (6000 6%) 0.9647
+dev_loss: 1.768913984298706, dev_bleu: 0.5615077368103167,dev_meteor: 0.7169034781082814
+An example demo:
+src: multiple bodies collide in a soccer match .
+ref: plusieurs mecs entrent en collision dans un match de football .
+pred: plusieurs luteurs se percuent lors d&apos; un match de foot .
+Current Early_Stop Counting: 10
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5615077368103167
+Best METEOR so far is: 0.7169034781082814
+8m 47s (- 121m 48s) (6100 6%) 0.9610
+8m 55s (- 121m 33s) (6200 6%) 1.0627
+9m 3s (- 121m 16s) (6300 6%) 1.1118
+9m 12s (- 121m 6s) (6400 7%) 1.1429
+9m 20s (- 120m 51s) (6500 7%) 1.1605
+9m 28s (- 120m 40s) (6600 7%) 0.9699
+9m 36s (- 120m 13s) (6700 7%) 0.8503
+9m 44s (- 120m 1s) (6800 7%) 1.0844
+9m 52s (- 119m 51s) (6900 7%) 1.0181
+10m 0s (- 119m 35s) (7000 7%) 0.9417
+dev_loss: 1.7645806074142456, dev_bleu: 0.5606081100944815,dev_meteor: 0.718256330761037
+An example demo:
+src: a man in a brightly-colored ski jacket stands with others on a european street .
+ref: un homme avec une veste de ski de couleur vive est debout parmi d&apos; autres dans une rue d&apos; europe .
+pred: un homme avec une veste de ski à carreaux est debout avec d&apos; autres dans une rue européenne .
+Current Early_Stop Counting: 9
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5615077368103167
+Best METEOR so far is: 0.718256330761037
+10m 19s (- 121m 24s) (7100 7%) 0.9643
+10m 27s (- 121m 12s) (7200 7%) 0.9301
+10m 36s (- 121m 0s) (7300 8%) 1.1255
+10m 44s (- 120m 48s) (7400 8%) 1.1009
+10m 52s (- 120m 31s) (7500 8%) 0.9530
+11m 1s (- 120m 18s) (7600 8%) 0.8326
+11m 9s (- 120m 6s) (7700 8%) 0.7842
+11m 17s (- 119m 51s) (7800 8%) 0.9105
+11m 25s (- 119m 32s) (7900 8%) 0.9191
+11m 33s (- 119m 22s) (8000 8%) 1.0119
+dev_loss: 1.6349389553070068, dev_bleu: 0.5478396864263948,dev_meteor: 0.7029102948791169
+An example demo:
+src: a medium sized white dog is jumping up to catch a small cloth frisbee .
+ref: un chien blanc de taille moyenne saute pour attraper un petit frisbee en tissu .
+pred: un chien de taille moyenne saute pour attraper un petit frisbee .
+Current Early_Stop Counting: 8
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5615077368103167
+Best METEOR so far is: 0.718256330761037
+11m 51s (- 120m 50s) (8100 8%) 0.9929
+12m 0s (- 120m 38s) (8200 9%) 0.9550
+12m 8s (- 120m 25s) (8300 9%) 0.9329
+12m 16s (- 120m 7s) (8400 9%) 0.8925
+12m 24s (- 119m 52s) (8500 9%) 0.7534
+12m 32s (- 119m 34s) (8600 9%) 0.9073
+12m 40s (- 119m 19s) (8700 9%) 0.8728
+12m 48s (- 119m 4s) (8800 9%) 0.9139
+12m 56s (- 118m 48s) (8900 9%) 0.9400
+13m 4s (- 118m 32s) (9000 9%) 0.9231
+dev_loss: 1.9398845434188843, dev_bleu: 0.5576365585572881,dev_meteor: 0.7117723807410513
+An example demo:
+src: three people are sitting outside at a table with artwork leaning against it .
+ref: trois personnes sont assises à une table avec des œuvres d&apos; art appuyées contre elle .
+pred: trois personnes sont assises dehors à une table avec des œuvres d&apos; art appuyés contre lui .
+Current Early_Stop Counting: 7
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5615077368103167
+Best METEOR so far is: 0.718256330761037
+13m 22s (- 119m 49s) (9100 10%) 1.0451
+13m 31s (- 119m 37s) (9200 10%) 0.9299
+13m 39s (- 119m 23s) (9300 10%) 0.8932
+13m 47s (- 119m 4s) (9400 10%) 0.6678
+13m 55s (- 118m 52s) (9500 10%) 0.8314
+14m 4s (- 118m 42s) (9600 10%) 0.7522
+14m 12s (- 118m 31s) (9700 10%) 0.7273
+14m 20s (- 118m 17s) (9800 10%) 0.7312
+14m 29s (- 118m 4s) (9900 10%) 0.8176
+14m 37s (- 117m 48s) (10000 11%) 0.9055
+dev_loss: 1.760226845741272, dev_bleu: 0.5605205651369515,dev_meteor: 0.7159551764254924
+An example demo:
+src: six people are in a gymnasium working on repairing some bicycles .
+ref: six personnes sont dans un gymnase , en train de réparer des vélos .
+pred: six personnes sont dans un gymnase en train de travailler des vélos .
+Current Early_Stop Counting: 6
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5615077368103167
+Best METEOR so far is: 0.718256330761037
+14m 55s (- 118m 59s) (10100 11%) 0.9453
+15m 3s (- 118m 41s) (10200 11%) 0.8087
+15m 11s (- 118m 24s) (10300 11%) 0.8287
+15m 19s (- 118m 9s) (10400 11%) 0.7244
+15m 27s (- 117m 55s) (10500 11%) 0.7633
+15m 35s (- 117m 41s) (10600 11%) 0.8623
+15m 43s (- 117m 27s) (10700 11%) 0.6550
+15m 52s (- 117m 15s) (10800 11%) 0.9387
+16m 0s (- 117m 1s) (10900 12%) 0.8403
+16m 9s (- 116m 53s) (11000 12%) 1.0029
+dev_loss: 1.7033076286315918, dev_bleu: 0.5542115898594849,dev_meteor: 0.7219408177481532
+An example demo:
+src: a man and a woman are holding up signs at a protest .
+ref: un homme et une femme brandissent des pancartes lors d&apos; une manifestation .
+pred: un homme et une femme tiennent des pancartes lors d&apos; une manifestation .
+Current Early_Stop Counting: 5
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5615077368103167
+Best METEOR so far is: 0.7219408177481532
+16m 28s (- 118m 1s) (11100 12%) 1.0341
+16m 37s (- 117m 48s) (11200 12%) 0.8287
+16m 45s (- 117m 35s) (11300 12%) 0.8324
+16m 53s (- 117m 20s) (11400 12%) 0.7215
+17m 1s (- 117m 6s) (11500 12%) 0.6862
+17m 9s (- 116m 51s) (11600 12%) 0.8331
+17m 17s (- 116m 35s) (11700 12%) 0.8468
+17m 25s (- 116m 21s) (11800 13%) 0.7340
+17m 33s (- 116m 5s) (11900 13%) 0.7912
+17m 41s (- 115m 51s) (12000 13%) 0.7792
+dev_loss: 1.680696964263916, dev_bleu: 0.566670645342514,dev_meteor: 0.7236361215384667
+An example demo:
+src: a woman hanging from a tree , her leg wrapped in cloth .
+ref: une femme suspendue à un arbre , sa jambe enveloppée dans une toile .
+pred: une femme s&apos; appuyant à un arbre , sa jambe enveloppé dans un tissu .
+Current Early_Stop Counting: 10
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.566670645342514
+Best METEOR so far is: 0.7236361215384667
+18m 0s (- 116m 49s) (12100 13%) 0.8869
+18m 8s (- 116m 35s) (12200 13%) 0.6336
+18m 16s (- 116m 22s) (12300 13%) 0.7443
+18m 24s (- 116m 7s) (12400 13%) 0.6550
+18m 32s (- 115m 52s) (12500 13%) 0.6181
+18m 40s (- 115m 38s) (12600 13%) 0.6906
+18m 49s (- 115m 26s) (12700 14%) 0.8057
+18m 57s (- 115m 12s) (12800 14%) 0.6997
+19m 5s (- 115m 0s) (12900 14%) 0.8504
+19m 13s (- 114m 48s) (13000 14%) 0.8167
+dev_loss: 1.9708826541900635, dev_bleu: 0.5569274546122511,dev_meteor: 0.7148746668016639
+An example demo:
+src: cop wrestle one man with his hand sticking up in the air as other cops watch .
+ref: un policier se bat avec un homme qui a la main en l&apos; air tandis que d&apos; autres policiers regardent .
+pred: un flic se battent un homme avec sa main lève les airs tandis que d&apos; autres policiers regardent .
+Current Early_Stop Counting: 9
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.566670645342514
+Best METEOR so far is: 0.7236361215384667
+19m 32s (- 115m 35s) (13100 14%) 0.7404
+19m 40s (- 115m 23s) (13200 14%) 0.6418
+19m 48s (- 115m 6s) (13300 14%) 0.6536
+19m 55s (- 114m 50s) (13400 14%) 0.6622
+20m 4s (- 114m 36s) (13500 14%) 0.7468
+20m 12s (- 114m 24s) (13600 15%) 0.8867
+20m 20s (- 114m 11s) (13700 15%) 0.8129
+20m 28s (- 113m 55s) (13800 15%) 0.7533
+20m 36s (- 113m 41s) (13900 15%) 0.8090
+20m 44s (- 113m 29s) (14000 15%) 0.8137
+dev_loss: 1.7664703130722046, dev_bleu: 0.5677139206090307,dev_meteor: 0.7220820716959608
+An example demo:
+src: a woman using a large camera while standing in the street .
+ref: une femme utilisant un grand appareil photo debout dans la rue .
+pred: une femme utilisant un grand appareil photo tandis qu&apos; elle est debout dans la rue .
+Current Early_Stop Counting: 10
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5677139206090307
+Best METEOR so far is: 0.7236361215384667
+21m 3s (- 114m 12s) (14100 15%) 0.5404
+21m 10s (- 113m 57s) (14200 15%) 0.7354
+21m 18s (- 113m 41s) (14300 15%) 0.6446
+21m 26s (- 113m 28s) (14400 15%) 0.7378
+21m 34s (- 113m 14s) (14500 16%) 0.8090
+21m 42s (- 113m 1s) (14600 16%) 0.7873
+21m 51s (- 112m 49s) (14700 16%) 0.6409
+21m 59s (- 112m 37s) (14800 16%) 0.7224
+22m 7s (- 112m 23s) (14900 16%) 0.6617
+22m 15s (- 112m 10s) (15000 16%) 0.6866
+dev_loss: 2.0190627574920654, dev_bleu: 0.5665919457176508,dev_meteor: 0.7200046729187495
+An example demo:
+src: children are staring out the window of a blue building with red shutters .
+ref: des enfants regardent par la fenêtre d&apos; un bâtiment bleu avec des volets rouges .
+pred: des enfants regardent par la fenêtre d&apos; un bâtiment bleu avec des fond rouges .
+Current Early_Stop Counting: 9
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5677139206090307
+Best METEOR so far is: 0.7236361215384667
+22m 33s (- 112m 49s) (15100 16%) 0.6043
+22m 42s (- 112m 37s) (15200 16%) 0.6429
+22m 50s (- 112m 26s) (15300 16%) 0.8302
+22m 58s (- 112m 13s) (15400 16%) 0.5586
+23m 7s (- 112m 1s) (15500 17%) 0.7852
+23m 15s (- 111m 50s) (15600 17%) 0.9098
+23m 23s (- 111m 37s) (15700 17%) 0.7663
+23m 31s (- 111m 24s) (15800 17%) 0.6840
+23m 40s (- 111m 12s) (15900 17%) 0.6888
+23m 48s (- 111m 2s) (16000 17%) 0.7604
+dev_loss: 1.7683823108673096, dev_bleu: 0.556369713621698,dev_meteor: 0.7149005679305453
+An example demo:
+src: many of the chairs are empty with only a few people enjoying the sun .
+ref: beaucoup de fauteuils sont vides , avec seulement quelques personnes profitant du soleil .
+pred: beaucoup de chaises vide avec quelques personnes profitant du soleil .
+Current Early_Stop Counting: 8
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5677139206090307
+Best METEOR so far is: 0.7236361215384667
+24m 7s (- 111m 37s) (16100 17%) 0.6699
+24m 14s (- 111m 21s) (16200 17%) 0.5875
+24m 21s (- 111m 3s) (16300 17%) 0.5133
+24m 29s (- 110m 50s) (16400 18%) 0.4451
+24m 38s (- 110m 39s) (16500 18%) 0.4971
+24m 46s (- 110m 24s) (16600 18%) 0.5238
+24m 53s (- 110m 10s) (16700 18%) 0.4615
+25m 1s (- 109m 56s) (16800 18%) 0.4202
+25m 9s (- 109m 44s) (16900 18%) 0.3973
+25m 18s (- 109m 32s) (17000 18%) 0.4375
+dev_loss: 1.6689215898513794, dev_bleu: 0.5838748867938931,dev_meteor: 0.7370777910681489
+An example demo:
+src: two chinese people are standing by a chalkboard .
+ref: deux chinois sont debout à côté d&apos; un tableau noir .
+pred: deux chinois sont debout à côté d&apos; un tableau .
+Current Early_Stop Counting: 10
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5838748867938931
+Best METEOR so far is: 0.7370777910681489
+25m 36s (- 110m 5s) (17100 18%) 0.4311
+25m 44s (- 109m 53s) (17200 18%) 0.4526
+25m 53s (- 109m 40s) (17300 19%) 0.4036
+26m 1s (- 109m 27s) (17400 19%) 0.3975
+26m 8s (- 109m 11s) (17500 19%) 0.3709
+26m 16s (- 109m 0s) (17600 19%) 0.4881
+26m 25s (- 108m 50s) (17700 19%) 0.5044
+26m 33s (- 108m 38s) (17800 19%) 0.3805
+26m 41s (- 108m 25s) (17900 19%) 0.3397
+26m 50s (- 108m 14s) (18000 19%) 0.4440
+dev_loss: 1.616343379020691, dev_bleu: 0.5791710271841759,dev_meteor: 0.7327213005869456
+An example demo:
+src: two people stand in front of a building .
+ref: deux personnes sont debout devant un bâtiment .
+pred: deux personnes sont debout devant un bâtiment .
+Current Early_Stop Counting: 9
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5838748867938931
+Best METEOR so far is: 0.7370777910681489
+27m 7s (- 108m 40s) (18100 19%) 0.3370
+27m 15s (- 108m 26s) (18200 20%) 0.3553
+27m 22s (- 108m 10s) (18300 20%) 0.3628
+27m 30s (- 107m 57s) (18400 20%) 0.5136
+27m 38s (- 107m 43s) (18500 20%) 0.4804
+27m 46s (- 107m 31s) (18600 20%) 0.4120
+27m 54s (- 107m 17s) (18700 20%) 0.4117
+28m 2s (- 107m 5s) (18800 20%) 0.3325
+28m 10s (- 106m 53s) (18900 20%) 0.4052
+28m 18s (- 106m 41s) (19000 20%) 0.3790
+dev_loss: 1.6973655223846436, dev_bleu: 0.5716394517425513,dev_meteor: 0.7349961935703068
+An example demo:
+src: the people are dressed in heavy layered clothing , and are motioning together .
+ref: les gens sont vêtus de plusieurs couches de vêtements , et bougent ensemble .
+pred: les gens sont vêtus de grands vêtements et de clées identiques , et font un chemin ensemble .
+Current Early_Stop Counting: 8
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5838748867938931
+Best METEOR so far is: 0.7370777910681489
+28m 37s (- 107m 8s) (19100 21%) 0.3563
+28m 45s (- 106m 55s) (19200 21%) 0.4117
+28m 53s (- 106m 45s) (19300 21%) 0.3963
+29m 2s (- 106m 34s) (19400 21%) 0.4507
+29m 10s (- 106m 21s) (19500 21%) 0.3589
+29m 18s (- 106m 9s) (19600 21%) 0.3052
+29m 26s (- 105m 57s) (19700 21%) 0.2895
+29m 34s (- 105m 43s) (19800 21%) 0.2466
+29m 42s (- 105m 33s) (19900 21%) 0.2685
+29m 51s (- 105m 23s) (20000 22%) 0.3939
+dev_loss: 1.7927805185317993, dev_bleu: 0.5796417109029031,dev_meteor: 0.7351213157624953
+An example demo:
+src: two children are preparing to go on an elephant ride .
+ref: deux enfants se préparent à faire une promenade sur un éléphant .
+pred: deux enfants se préparent à partir sur un manège de éléphant .
+Current Early_Stop Counting: 7
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5838748867938931
+Best METEOR so far is: 0.7370777910681489
+30m 10s (- 105m 49s) (20100 22%) 0.4127
+30m 18s (- 105m 36s) (20200 22%) 0.3432
+30m 26s (- 105m 24s) (20300 22%) 0.3738
+30m 34s (- 105m 11s) (20400 22%) 0.3431
+30m 42s (- 104m 58s) (20500 22%) 0.3167
+30m 50s (- 104m 46s) (20600 22%) 0.2743
+30m 58s (- 104m 34s) (20700 22%) 0.3002
+31m 6s (- 104m 24s) (20800 22%) 0.3351
+31m 14s (- 104m 11s) (20900 23%) 0.3291
+31m 23s (- 104m 1s) (21000 23%) 0.3158
+dev_loss: 1.8131884336471558, dev_bleu: 0.5805519830171529,dev_meteor: 0.7330310391995583
+An example demo:
+src: a team of soccer players is huddled and having a serious discussion .
+ref: une équipe de joueurs de football sont entassés et discutent sérieusement .
+pred: une équipe de joueurs de football se battent et ont une discussion animée .
+Current Early_Stop Counting: 6
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5838748867938931
+Best METEOR so far is: 0.7370777910681489
+31m 42s (- 104m 25s) (21100 23%) 0.4179
+31m 50s (- 104m 13s) (21200 23%) 0.3477
+31m 58s (- 104m 0s) (21300 23%) 0.3827
+32m 5s (- 103m 47s) (21400 23%) 0.4589
+32m 13s (- 103m 35s) (21500 23%) 0.3050
+32m 22s (- 103m 25s) (21600 23%) 0.2951
+32m 31s (- 103m 15s) (21700 23%) 0.3074
+32m 38s (- 103m 1s) (21800 24%) 0.3305
+32m 45s (- 102m 47s) (21900 24%) 0.2660
+32m 53s (- 102m 33s) (22000 24%) 0.3000
+dev_loss: 1.7863904237747192, dev_bleu: 0.577912000863933,dev_meteor: 0.7354556901648447
+An example demo:
+src: i see a bearded man and elderly lady sharing a bowl of food .
+ref: je vois un homme barbu et une dame âgée partageant un bol de nourriture .
+pred: je vois un homme barbu et une femme âgée partageant un bol de nourriture .
+Current Early_Stop Counting: 5
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5838748867938931
+Best METEOR so far is: 0.7370777910681489
+33m 12s (- 102m 55s) (22100 24%) 0.2954
+33m 20s (- 102m 44s) (22200 24%) 0.3685
+33m 28s (- 102m 31s) (22300 24%) 0.2911
+33m 37s (- 102m 21s) (22400 24%) 0.3297
+33m 45s (- 102m 11s) (22500 24%) 0.3335
+33m 54s (- 102m 1s) (22600 24%) 0.2834
+34m 2s (- 101m 50s) (22700 25%) 0.3164
+34m 11s (- 101m 39s) (22800 25%) 0.2997
+34m 18s (- 101m 26s) (22900 25%) 0.2886
+34m 26s (- 101m 14s) (23000 25%) 0.3068
+dev_loss: 1.818799614906311, dev_bleu: 0.5778014333332759,dev_meteor: 0.731581442872313
+An example demo:
+src: a dog treads through a shallow area of water located on a rocky mountainside .
+ref: un chien marche dans un petit plan d&apos; eau peu profond situé sur un flanc rocheux .
+pred: un chien marche dans une zone peu profonde d&apos; eau située sur une paroi rocheuse .
+Current Early_Stop Counting: 4
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5838748867938931
+Best METEOR so far is: 0.7370777910681489
+34m 45s (- 101m 33s) (23100 25%) 0.4127
+34m 53s (- 101m 22s) (23200 25%) 0.2641
+35m 2s (- 101m 11s) (23300 25%) 0.3785
+35m 10s (- 100m 59s) (23400 25%) 0.2839
+35m 18s (- 100m 48s) (23500 25%) 0.2822
+35m 27s (- 100m 38s) (23600 26%) 0.4170
+35m 35s (- 100m 28s) (23700 26%) 0.2590
+35m 43s (- 100m 15s) (23800 26%) 0.3152
+35m 51s (- 100m 4s) (23900 26%) 0.2407
+35m 59s (- 99m 52s) (24000 26%) 0.2566
+dev_loss: 1.7420568466186523, dev_bleu: 0.5829669677904588,dev_meteor: 0.7340346466515817
+An example demo:
+src: three small dogs sniff at something .
+ref: trois petits chiens reniflent quelque chose .
+pred: trois petits chiens tirent quelque chose vers quelque chose .
+Current Early_Stop Counting: 3
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5838748867938931
+Best METEOR so far is: 0.7370777910681489
+36m 18s (- 100m 10s) (24100 26%) 0.3668
+36m 26s (- 99m 59s) (24200 26%) 0.3627
+36m 34s (- 99m 47s) (24300 26%) 0.2238
+36m 42s (- 99m 35s) (24400 26%) 0.3136
+36m 50s (- 99m 24s) (24500 27%) 0.2795
+36m 58s (- 99m 13s) (24600 27%) 0.2661
+37m 7s (- 99m 2s) (24700 27%) 0.2391
+37m 15s (- 98m 50s) (24800 27%) 0.3640
+37m 24s (- 98m 40s) (24900 27%) 0.3593
+37m 31s (- 98m 28s) (25000 27%) 0.2729
+dev_loss: 1.655868411064148, dev_bleu: 0.5785574968262984,dev_meteor: 0.7323344892705456
+An example demo:
+src: two man are wrestling on a yellow and blue floor .
+ref: deux homme se battent sur un sol bleu et jaune .
+pred: deux hommes se battent sur un sol bleu et bleu .
+Current Early_Stop Counting: 2
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5838748867938931
+Best METEOR so far is: 0.7370777910681489
+37m 50s (- 98m 45s) (25100 27%) 0.3151
+37m 59s (- 98m 35s) (25200 27%) 0.2624
+38m 7s (- 98m 24s) (25300 27%) 0.2254
+38m 15s (- 98m 12s) (25400 28%) 0.2383
+38m 23s (- 98m 0s) (25500 28%) 0.3493
+38m 31s (- 97m 48s) (25600 28%) 0.2225
+38m 39s (- 97m 37s) (25700 28%) 0.3057
+38m 47s (- 97m 26s) (25800 28%) 0.2873
+38m 56s (- 97m 17s) (25900 28%) 0.3292
+39m 4s (- 97m 5s) (26000 28%) 0.2726
+dev_loss: 1.8336195945739746, dev_bleu: 0.5771458031951141,dev_meteor: 0.730392682038272
+An example demo:
+src: a group of people collect around a man in a suit and a little boy .
+ref: un groupe de personnes se rassemblent autour d&apos; un homme en costume et d&apos; un petit garçon .
+pred: un groupe de personnes rassemblées autour d&apos; un homme en costume et un petit garçon .
+Current Early_Stop Counting: 1
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5838748867938931
+Best METEOR so far is: 0.7370777910681489
+39m 22s (- 97m 18s) (26100 28%) 0.2985
+39m 30s (- 97m 6s) (26200 28%) 0.2419
+39m 38s (- 96m 55s) (26300 29%) 0.3618
+39m 46s (- 96m 42s) (26400 29%) 0.2724
+39m 53s (- 96m 30s) (26500 29%) 0.2361
+40m 1s (- 96m 18s) (26600 29%) 0.2672
+40m 9s (- 96m 7s) (26700 29%) 0.3038
+40m 18s (- 95m 56s) (26800 29%) 0.2535
+40m 26s (- 95m 45s) (26900 29%) 0.2660
+40m 34s (- 95m 35s) (27000 29%) 0.3627
+dev_loss: 1.5716055631637573, dev_bleu: 0.579957169899473,dev_meteor: 0.7334623025639547
+An example demo:
+src: two middle-aged men in a room with music equipment speak with each other .
+ref: deux hommes d&apos; âge moyen se parlent dans une pièce avec du matériel de musique .
+pred: deux hommes d&apos; âge moyen dans une pièce avec des équipements de musique parlent ensemble .
+Current Early_Stop Counting: 0
+Best Loss so far is: 1.5623949766159058
+Best BLEU so far is: 0.5838748867938931
+Best METEOR so far is: 0.7370777910681489
+Training is done.
+Evalute the Test Result
+Test BLEU score from the best BLEU model: 0.522145174724175
+Test METEOR score from the best BLEU model: 0.690008484180175
+
+
+Test BLEU score from the best LOSS model: 0.4904040284370619
+Test METEOR score from the best LOSS model: 0.673515640075243
+
+
+Test BLEU score from the best METEOR model: 0.522145174724175
+Test METEOR score from the best METEOR model: 0.690008484180175
