@@ -87,12 +87,20 @@ Best BLEU so far is: 0.4072734023593675
 Best METEOR so far is: 0.5805528322085509
 Training is done.
 Evalute the Test Result
+Image Retrieval Accuracy with best_BLEU model is:
+r1: 59.9, r5: 87.2, r10: 93.1
 Test BLEU score from the best BLEU model: 0.3156321668098113
 Test METEOR score from the best BLEU model: 0.5215313737631495
 
+
+Image Retrieval Accuracy with best_loss model is:
+r1: 49.7, r5: 80.0, r10: 88.9
 Test BLEU score from the best LOSS model: 0.3125071718114073
 Test METEOR score from the best LOSS model: 0.5200889548226774
 
+
+Image Retrieval Accuracy with best_METEOR model is:
+r1: 59.9, r5: 87.2, r10: 93.1
 Test BLEU score from the best METEOR model: 0.3156321668098113
 Test METEOR score from the best METEOR model: 0.5215313737631495
 
