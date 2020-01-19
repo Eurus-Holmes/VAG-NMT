@@ -74,8 +74,10 @@ Evalute the Test Result
 Test BLEU score from the best BLEU model: 0.28795071418055507
 Test METEOR score from the best BLEU model: 0.5041343275322484
 
+
 Test BLEU score from the best LOSS model: 0.2908121238955742
 Test METEOR score from the best LOSS model: 0.5102397970452623
+
 
 Test BLEU score from the best METEOR model: 0.28746455565942547
 Test METEOR score from the best METEOR model: 0.5116179300972875
